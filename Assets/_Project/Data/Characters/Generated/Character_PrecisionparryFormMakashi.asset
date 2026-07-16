@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f61e24fb32dd94db9756570dd8234d, type: 3}
+  m_Name: Character_MakAShifty
+  m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
+  description: 
+  characterId: mak_a_shifty
+  displayName: Mak-A-Shifty
+  characterDescription: Fancy footwork and even fancier parries.
+  characterPortrait: {fileID: 21300000, guid: d9a8738c3660d744aba55b49a6f3e517, type: 3}
+  characterIcon: {fileID: 21300000, guid: d9a8738c3660d744aba55b49a6f3e517, type: 3}
+  animatorController: {fileID: 9100000, guid: d1158a714fcc3454dba8e0137d847850, type: 2}
+  baseMoveSpeed: 8
+  baseAirSpeed: 6
+  baseJumpHeight: 5
+  baseGravity: 1
+  baseDashDistance: 6
+  baseDashDuration: 0.2
+  baseMaxAirJumps: 1
+  baseCanAirDash: 1
+  baseAirDashCooldown: 1
+  baseCanWallJump: 0
+  coyoteTime: 0.1
+  jumpBufferTime: 0.1
+  weightClass: 2
+  fallSpeedMultiplier: 1
+  fastFallMultiplier: 2
+  defaultForm: {fileID: 11400000, guid: 4aa15808d76eced4cbb62512ca74450e, type: 2}
+  availableForms:
+  - {fileID: 11400000, guid: 061009d4814a0ab47b73f795a95f0d26, type: 2}
+  - {fileID: 11400000, guid: 4aa15808d76eced4cbb62512ca74450e, type: 2}
+  - {fileID: 11400000, guid: f47bf85610026224aba319fa57a9e033, type: 2}
+  - {fileID: 11400000, guid: 17e12173b72860145af4d0f5fdef490e, type: 2}
+  - {fileID: 11400000, guid: 97123db069fe55c488220b7ba91053fe, type: 2}
+  - {fileID: 11400000, guid: a3741d60623016b49bf88dbb17f47c3f, type: 2}
+  - {fileID: 11400000, guid: 792f78c7b2be95540bfa07338c5cf72c, type: 2}
+  defaultLightAttack: {fileID: 11400000, guid: 90842d7d7bd36a64eb035440781bfa2b, type: 2}
+  defaultHeavyAttack: {fileID: 11400000, guid: 607cc23b87c5a9945a2cdb4416cddce7, type: 2}
+  defaultUpAerial: {fileID: 11400000, guid: 5de8ca46c7668164e8266802056e2baa, type: 2}
+  defaultDownAerial: {fileID: 11400000, guid: 55d7b0ae7fad29540a506a2368c53353, type: 2}
+  defaultForwardAerial: {fileID: 11400000, guid: b929a6d2f6a7a31418f06e474b6390b8, type: 2}
+  defaultBackAerial: {fileID: 11400000, guid: b5c3669cddc9d6448a26e989acb5e2e4, type: 2}
+  defaultNeutralSpecial: {fileID: 11400000, guid: c31d8afce75087b47b0332557eee4d5e, type: 2}
+  defaultSideSpecial: {fileID: 11400000, guid: ef86a0de593bad541b4b8a47a8d6ccfd, type: 2}
+  defaultUpSpecial: {fileID: 11400000, guid: 10a29e489ac52404889251d45a030e28, type: 2}
+  defaultDownSpecial: {fileID: 11400000, guid: 000e905405a5e1043b0106660987f1a9, type: 2}
+  characterModelPrefab: {fileID: 6492114437399951605, guid: a57b9f03d33517041af649ecfbf9b08e, type: 3}
+  modelMaterials: []
+  saberEmitterTransform: {fileID: 0}
+  jumpSounds: []
+  landSounds: []
+  hitSounds: []
+  deathSounds: []
+  tauntSounds: []
+  dustVFXPrefab: {fileID: 0}
+  landingVFXPrefab: {fileID: 0}
+  dashVFXPrefab: {fileID: 0}
+  deathVFXPrefab: {fileID: 0}

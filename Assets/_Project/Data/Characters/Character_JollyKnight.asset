@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f61e24fb32dd94db9756570dd8234d, type: 3}
+  m_Name: Character_JollyKnight
+  m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
+  description: 
+  characterId: jolly_knight
+  displayName: Jolly Knight
+  characterDescription: A balanced warrior of the Order. Mind the manure.
+  characterPortrait: {fileID: 0}
+  characterIcon: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: de7291df301c7ff4f8a071359bb0fd1c, type: 2}
+  baseMoveSpeed: 8
+  baseAirSpeed: 6
+  baseJumpHeight: 5
+  baseGravity: 1
+  baseDashDistance: 6
+  baseDashDuration: 0.2
+  baseMaxAirJumps: 1
+  baseCanAirDash: 1
+  baseAirDashCooldown: 1
+  baseCanWallJump: 0
+  coyoteTime: 0.1
+  jumpBufferTime: 0.1
+  weightClass: 2
+  fallSpeedMultiplier: 1
+  fastFallMultiplier: 2
+  defaultForm: {fileID: 11400000, guid: 061009d4814a0ab47b73f795a95f0d26, type: 2}
+  availableForms:
+  - {fileID: 11400000, guid: 061009d4814a0ab47b73f795a95f0d26, type: 2}
+  - {fileID: 11400000, guid: 4aa15808d76eced4cbb62512ca74450e, type: 2}
+  - {fileID: 11400000, guid: f47bf85610026224aba319fa57a9e033, type: 2}
+  - {fileID: 11400000, guid: 17e12173b72860145af4d0f5fdef490e, type: 2}
+  defaultLightAttack: {fileID: 11400000, guid: 90842d7d7bd36a64eb035440781bfa2b, type: 2}
+  defaultHeavyAttack: {fileID: 11400000, guid: 607cc23b87c5a9945a2cdb4416cddce7, type: 2}
+  defaultUpAerial: {fileID: 11400000, guid: 5de8ca46c7668164e8266802056e2baa, type: 2}
+  defaultDownAerial: {fileID: 11400000, guid: 55d7b0ae7fad29540a506a2368c53353, type: 2}
+  defaultForwardAerial: {fileID: 11400000, guid: b929a6d2f6a7a31418f06e474b6390b8, type: 2}
+  defaultBackAerial: {fileID: 11400000, guid: b5c3669cddc9d6448a26e989acb5e2e4, type: 2}
+  defaultNeutralSpecial: {fileID: 11400000, guid: 0910551fa93e1454d970585f8cb4f61a, type: 2}
+  defaultSideSpecial: {fileID: 11400000, guid: 4235fc127f951374196151f7174b10ab, type: 2}
+  defaultUpSpecial: {fileID: 11400000, guid: 5d55deb3c9946b741899dc384e675d3c, type: 2}
+  defaultDownSpecial: {fileID: 11400000, guid: cad1052ae5923c4428178002042c1e52, type: 2}
+  characterModelPrefab: {fileID: 3528774601344430082, guid: 79ce589aa83384643a6988e6986fa2de, type: 3}
+  modelMaterials: []
+  saberEmitterTransform: {fileID: 0}
+  jumpSounds: []
+  landSounds: []
+  hitSounds: []
+  deathSounds: []
+  tauntSounds: []
+  dustVFXPrefab: {fileID: 0}
+  landingVFXPrefab: {fileID: 0}
+  dashVFXPrefab: {fileID: 0}
+  deathVFXPrefab: {fileID: 0}

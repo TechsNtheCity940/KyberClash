@@ -1,0 +1,71 @@
+# Unity .gitattributes
+# Git LFS is not enabled; treat binary assets as binary to avoid corruption.
+
+# Default: normalize line endings to LF on checkout diff
+* text=auto eol=lf
+
+# Unity text assets
+*.meta text eol=lf
+*.cs text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text eol=lf
+*.mat text eol=lf
+*.physicMaterial text eol=lf
+*.physicsMaterial2D text eol=lf
+*.anim text eol=lf
+*.controller text eol=lf
+*.overrideController text eol=lf
+*.inputactions text eol=lf
+*.shader text eol=lf
+*.compute text eol=lf
+*.cginc text eol=lf
+*.hlsl text eol=lf
+*.uss text eol=lf
+*.uxml text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.csv text eol=lf
+*.xml text eol=lf
+*.yaml text eol=lf
+
+# Binary assets (do not touch)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.psd binary
+*.exr binary
+*.tif binary
+*.tiff binary
+*.gif binary
+*.bmp binary
+*.webp binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.aiff binary
+*.fbx binary
+*.obj binary
+*.blend binary
+*.max binary
+*.ma binary
+*.mb binary
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+*.7z binary
+*.rar binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.bytes binary
+*.asset binary
+*.unitypackage binary
+*.mp4 binary
+*.mov binary
+*.webm binary

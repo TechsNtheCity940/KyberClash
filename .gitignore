@@ -1,0 +1,59 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Ee]xternal/
+.vs/
+
+# Generated assets / caches
+GeneratedAssets/
+Assets/AssetStoreTools*
+
+# Asset meta data should be included, but generated import logs are not needed
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files (keep .meta for assets, ignore in Library)
+!/[Aa]ssets/**/*.meta
+
+# Thumbnails / OS files
+[Dd]esktop.ini
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+$RECYCLE.BIN/
+*.lnk
+
+# Visual Studio / Rider
+.vscode/
+.idea/
+*.swp
+
+# Crash reports
+sysinfo.txt
+crashlytics-build.properties
+
+# Package cache (managed by Unity)
+[Uu]nityPackageManager/
+
+# Local build output
+Builds/
+
+# Logs
+Logs/

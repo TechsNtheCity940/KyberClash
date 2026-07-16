@@ -1,0 +1,15 @@
+{
+  "Title": "BerserkerTrance — Form Juyo / Vaapad (Aggressive, high risk/reward, meter drain)",
+  "Slug": "berserkertrance_form_juyo_vaapad",
+  "Prompt": "Star Wars Jedi in Form Juyo/Vaapad berserker trance, wild aggressive flurry pose with the lightsaber whipping in erratic arcs, feral intense expression, crackling dark-side energy and ember sparks around the body, violet-to-red corrupted kyber blade with jagged glow, tattered dark robe with glowing veins, clean cel-shaded Smash Bros Ultimate key art style, bold readable silhouette, vibrant flat shading, subtle rim light, transparent background. Sprite sheet: 6x4 grid showing idle trance (eyes glowing, aura flaring), walk, leap, light flurry, heavy berserk slash, meter-drain overload (body enveloped in pulsing power aura), side special, up special, down special, hit react, KO — evenly spaced cells, transparent background, consistent lighting and proportions, 2048x2048 game-ready.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/92a95cafa9d8e0da78a902e47b2a0d2d.webp",
+  "AnimationSpritesheetUrl": "https://storage.googleapis.com/ludo-assets/api/fdb5e52ec05d895342c429f28bbde133.webp",
+  "AnimationGifUrl": null,
+  "AnimationVideoUrl": "https://storage.googleapis.com/ludo-assets/api/a8d5412c16f2fac40a93ed95150ced46.mp4",
+  "GeneratedAtUtc": "2026-07-08T22:48:58.0790343Z",
+  "Files": {
+    "berserkertrance_form_juyo_vaapad_key_art": "Assets/_Project/Generated/LudoAI/Characters/berserkertrance_form_juyo_vaapad/berserkertrance_form_juyo_vaapad_key_art.webp",
+    "berserkertrance_form_juyo_vaapad_animation_spritesheet": "Assets/_Project/Generated/LudoAI/Characters/berserkertrance_form_juyo_vaapad/berserkertrance_form_juyo_vaapad_animation_spritesheet.webp",
+    "berserkertrance_form_juyo_vaapad_animation_video": "Assets/_Project/Generated/LudoAI/Characters/berserkertrance_form_juyo_vaapad/berserkertrance_form_juyo_vaapad_animation_video.mp4"
+  }
+}

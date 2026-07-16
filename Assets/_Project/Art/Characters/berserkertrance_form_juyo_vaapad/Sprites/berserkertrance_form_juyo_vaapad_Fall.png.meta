@@ -1,0 +1,564 @@
+fileFormatVersion: 2
+guid: 98f54876ed856e342aa8fcea92c0851e
+labels:
+- UnityAI
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6085982738829914470
+    second: berserkertrance_form_juyo_vaapad_Fall_00
+  - first:
+      213: -7058593513827131468
+    second: berserkertrance_form_juyo_vaapad_Fall_01
+  - first:
+      213: -411976377833510424
+    second: berserkertrance_form_juyo_vaapad_Fall_02
+  - first:
+      213: -3542723565149670824
+    second: berserkertrance_form_juyo_vaapad_Fall_03
+  - first:
+      213: -56492928400804208
+    second: berserkertrance_form_juyo_vaapad_Fall_04
+  - first:
+      213: -4924200495110477620
+    second: berserkertrance_form_juyo_vaapad_Fall_05
+  - first:
+      213: -5673196587546168843
+    second: berserkertrance_form_juyo_vaapad_Fall_06
+  - first:
+      213: 5693089128148127889
+    second: berserkertrance_form_juyo_vaapad_Fall_07
+  - first:
+      213: -926406306789092883
+    second: berserkertrance_form_juyo_vaapad_Fall_08
+  - first:
+      213: -129659972385833181
+    second: berserkertrance_form_juyo_vaapad_Fall_09
+  - first:
+      213: 4936772506588180323
+    second: berserkertrance_form_juyo_vaapad_Fall_10
+  - first:
+      213: 2555648836361438002
+    second: berserkertrance_form_juyo_vaapad_Fall_11
+  - first:
+      213: 8918072427819914590
+    second: berserkertrance_form_juyo_vaapad_Fall_12
+  - first:
+      213: -8651342965366063386
+    second: berserkertrance_form_juyo_vaapad_Fall_13
+  - first:
+      213: 8515259178340161389
+    second: berserkertrance_form_juyo_vaapad_Fall_14
+  - first:
+      213: -1242852307616899500
+    second: berserkertrance_form_juyo_vaapad_Fall_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661bd195e01c57450800000000000000
+      internalID: 6085982738829914470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_01
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf1572e896da0e90800000000000000
+      internalID: -7058593513827131468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_02
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e9a167caad584af0800000000000000
+      internalID: -411976377833510424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_03
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85239d900b7b5dec0800000000000000
+      internalID: -3542723565149670824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096395e1bfb473ff0800000000000000
+      internalID: -56492928400804208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_05
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8232e3db9b9abb0800000000000000
+      internalID: -4924200495110477620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_06
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f13a52f2c1c441b0800000000000000
+      internalID: -5673196587546168843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_07
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19058e5166ae10f40800000000000000
+      internalID: 5693089128148127889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1972e4f5eb423f0800000000000000
+      internalID: -926406306789092883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_09
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ffa5c21fa533ef0800000000000000
+      internalID: -129659972385833181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f6a184070f28440800000000000000
+      internalID: 4936772506588180323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233c6f5831d777320800000000000000
+      internalID: 2555648836361438002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5559658f9b53cb70800000000000000
+      internalID: 8918072427819914590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eef747e86140f780800000000000000
+      internalID: -8651342965366063386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67995f5b174c2670800000000000000
+      internalID: 8515259178340161389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: berserkertrance_form_juyo_vaapad_Fall_15
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e5830496080cee0800000000000000
+      internalID: -1242852307616899500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      berserkertrance_form_juyo_vaapad_Fall_00: 6085982738829914470
+      berserkertrance_form_juyo_vaapad_Fall_01: -7058593513827131468
+      berserkertrance_form_juyo_vaapad_Fall_02: -411976377833510424
+      berserkertrance_form_juyo_vaapad_Fall_03: -3542723565149670824
+      berserkertrance_form_juyo_vaapad_Fall_04: -56492928400804208
+      berserkertrance_form_juyo_vaapad_Fall_05: -4924200495110477620
+      berserkertrance_form_juyo_vaapad_Fall_06: -5673196587546168843
+      berserkertrance_form_juyo_vaapad_Fall_07: 5693089128148127889
+      berserkertrance_form_juyo_vaapad_Fall_08: -926406306789092883
+      berserkertrance_form_juyo_vaapad_Fall_09: -129659972385833181
+      berserkertrance_form_juyo_vaapad_Fall_10: 4936772506588180323
+      berserkertrance_form_juyo_vaapad_Fall_11: 2555648836361438002
+      berserkertrance_form_juyo_vaapad_Fall_12: 8918072427819914590
+      berserkertrance_form_juyo_vaapad_Fall_13: -8651342965366063386
+      berserkertrance_form_juyo_vaapad_Fall_14: 8515259178340161389
+      berserkertrance_form_juyo_vaapad_Fall_15: -1242852307616899500
+      frame_0: 1969030193
+      frame_1: 487377550
+      frame_10: -283205468
+      frame_11: 51005033
+      frame_12: -1170413922
+      frame_13: 1721871405
+      frame_14: -547251926
+      frame_15: 2125269889
+      frame_2: -643295241
+      frame_3: -1162875892
+      frame_4: -1008709471
+      frame_5: -1787382926
+      frame_6: -787055690
+      frame_7: 633445359
+      frame_8: -1839015980
+      frame_9: -513548107
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

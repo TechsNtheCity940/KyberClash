@@ -1,0 +1,15 @@
+﻿{
+    "Title":  "PrecisionParry â€” Form Makashi (Dueling, precise parries, ripostes)",
+    "Slug":  "precisionparry_form_makashi",
+    "Prompt":  "Star Wars Jedi in Form Makashi dueling stance, single-handed elegant fencer grip on a thin elegant lightsaber, blade pointed forward in a precise en garde pose, slender refined build, aristocratic posture, red-cored crimson blade with white core, fitted dark dueling robe with high collar, clean cel-shaded Smash Bros Ultimate key art style, bold readable silhouette, vibrant flat shading, subtle rim light, transparent background. Sprite sheet: 6x4 grid showing idle, walk, jump, light thrust, heavy lunge, precision-parry spark (blades meeting with bright parry flash then riposte), side special, up special, down special, hit react, KO â€” evenly spaced cells, transparent background, consistent lighting and proportions, 2048x2048 game-ready.",
+    "ImageUrl":  "https://storage.googleapis.com/ludo-assets/api/6b5f56a8b3ce25749f9ea7a527a61eac.webp",
+    "AnimationSpritesheetUrl":  "https://storage.googleapis.com/ludo-assets/api/9a9d2175e6d1597c5d5e539b35c333ab.webp",
+    "AnimationGifUrl":  null,
+    "AnimationVideoUrl":  "https://storage.googleapis.com/ludo-assets/api/be9947f973f8472bec83e63bac54544e.mp4",
+    "GeneratedAtUtc":  "2026-07-08T20:18:39.6056485Z",
+    "Files":  {
+                  "precisionparry_form_makashi_key_art":  "Assets/_Project/Generated/LudoAI/Characters/precisionparry_form_makashi/precisionparry_form_makashi_key_art.webp",
+                  "precisionparry_form_makashi_animation_spritesheet":  "Assets/_Project/Generated/LudoAI/Characters/precisionparry_form_makashi/precisionparry_form_makashi_animation_spritesheet.webp",
+                  "precisionparry_form_makashi_animation_video":  "Assets/_Project/Generated/LudoAI/Characters/precisionparry_form_makashi/precisionparry_form_makashi_animation_video.mp4"
+              }
+}

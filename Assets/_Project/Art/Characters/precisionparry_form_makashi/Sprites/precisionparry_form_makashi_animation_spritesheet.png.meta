@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: 042538c586a21844cbca7557940e4805
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 325
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 650
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3cd2483d9077c7498d7eb9632800b7c
+      internalID: 548212445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_01
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 650
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99eb963da057b874fa92816956b07a28
+      internalID: 963566169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_02
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 650
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac6600eff5c9cf45bffea7757bd8ea9
+      internalID: -835624034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_03
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c567ba3e000d68941a8988011dad7dd9
+      internalID: -178956248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_04
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 325
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0754ec9be9e0614eaa49c8b8df59ab0
+      internalID: 1775288374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_05
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 325
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422ea12add0e5c44ab4d1646b33a7bc5
+      internalID: 2117157816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_06
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89a7ca220f109b42829c48e39a3023c
+      internalID: 323556752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_07
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89b52becf651594bb2e7bdac0656ec6
+      internalID: -659439506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: precisionparry_form_makashi_frame_08
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 440
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4e82eec3a269546bb514b9ee40178f
+      internalID: 1190517008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4216a0a007041b943a443c2da81b5ddc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      precisionparry_form_makashi_animation_spritesheet_00: 2048237813
+      precisionparry_form_makashi_animation_spritesheet_01: 708791894
+      precisionparry_form_makashi_animation_spritesheet_02: 1089741976
+      precisionparry_form_makashi_animation_spritesheet_03: 678333231
+      precisionparry_form_makashi_animation_spritesheet_04: 1762901949
+      precisionparry_form_makashi_animation_spritesheet_05: -1650596428
+      precisionparry_form_makashi_animation_spritesheet_06: -1233106648
+      precisionparry_form_makashi_animation_spritesheet_07: 157651547
+      precisionparry_form_makashi_animation_spritesheet_08: 275667348
+      precisionparry_form_makashi_animation_spritesheet_09: -1901990144
+      precisionparry_form_makashi_animation_spritesheet_10: -761757684
+      precisionparry_form_makashi_animation_spritesheet_11: 99858693
+      precisionparry_form_makashi_animation_spritesheet_12: -184176415
+      precisionparry_form_makashi_animation_spritesheet_13: -716941090
+      precisionparry_form_makashi_animation_spritesheet_14: 1508395736
+      precisionparry_form_makashi_animation_spritesheet_15: -1043026165
+      precisionparry_form_makashi_animation_spritesheet_16: 690013434
+      precisionparry_form_makashi_animation_spritesheet_17: -476996160
+      precisionparry_form_makashi_animation_spritesheet_18: -1387683321
+      precisionparry_form_makashi_animation_spritesheet_19: 434494931
+      precisionparry_form_makashi_animation_spritesheet_20: -1889973443
+      precisionparry_form_makashi_animation_spritesheet_21: 908231574
+      precisionparry_form_makashi_animation_spritesheet_22: 993802875
+      precisionparry_form_makashi_animation_spritesheet_23: -1637609087
+      precisionparry_form_makashi_frame_00: 548212445
+      precisionparry_form_makashi_frame_01: 963566169
+      precisionparry_form_makashi_frame_02: -835624034
+      precisionparry_form_makashi_frame_03: -178956248
+      precisionparry_form_makashi_frame_04: 1775288374
+      precisionparry_form_makashi_frame_05: 2117157816
+      precisionparry_form_makashi_frame_06: 323556752
+      precisionparry_form_makashi_frame_07: -659439506
+      precisionparry_form_makashi_frame_08: 1190517008
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

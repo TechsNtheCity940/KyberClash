@@ -1,0 +1,15 @@
+﻿{
+    "Title":  "AcrobaticFlow â€” Form Ataru (Acrobatic, air mobility, combo extender)",
+    "Slug":  "acrobaticflow_form_ataru",
+    "Prompt":  "Star Wars Jedi in Form Ataru mid-air acrobatic flourish, dynamic spinning leap with both hands gripping the lightsaber in a wide spinning arc, energetic expressive face, agile lithe build, yellow-gold kyber blade with motion-trail glow, lightweight flexible tunic in bright golds and whites, clean cel-shaded Smash Bros Ultimate key art style, bold readable silhouette, vibrant flat shading, subtle rim light, transparent background. Sprite sheet: 6x4 grid showing idle, run, high jump, flip attack, light flurry, aerial combo chain (multiple after-image sabers), side special, up special launching rise, down special, hit react, KO â€” evenly spaced cells, transparent background, consistent lighting and proportions, 2048x2048 game-ready.",
+    "ImageUrl":  "https://storage.googleapis.com/ludo-assets/api/daa52451624eb88f4d7ad49e8d4cbe73.webp",
+    "AnimationSpritesheetUrl":  "https://storage.googleapis.com/ludo-assets/api/5c99bfd7e282de4af71676898d219d40.webp",
+    "AnimationGifUrl":  null,
+    "AnimationVideoUrl":  "https://storage.googleapis.com/ludo-assets/api/c4de2290b7b46b31d33da832fb2a2151.mp4",
+    "GeneratedAtUtc":  "2026-07-08T20:21:10.3706759Z",
+    "Files":  {
+                  "acrobaticflow_form_ataru_key_art":  "Assets/_Project/Generated/LudoAI/Characters/acrobaticflow_form_ataru/acrobaticflow_form_ataru_key_art.webp",
+                  "acrobaticflow_form_ataru_animation_spritesheet":  "Assets/_Project/Generated/LudoAI/Characters/acrobaticflow_form_ataru/acrobaticflow_form_ataru_animation_spritesheet.webp",
+                  "acrobaticflow_form_ataru_animation_video":  "Assets/_Project/Generated/LudoAI/Characters/acrobaticflow_form_ataru/acrobaticflow_form_ataru_animation_video.mp4"
+              }
+}

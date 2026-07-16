@@ -1,0 +1,10 @@
+{
+  "Title": "Star Destroyer Debris Field",
+  "Slug": "star_destroyer_debris_field",
+  "Prompt": "Super Smash Bros Ultimate style floating battle arena, shattered starship debris drifting in space, central broken hull platform, two angled side wing platforms and one higher command-deck platform, open blast-zone edges, distant stars and planet glow, readable side-view fighting stage layout, clean cel-shaded game key art, no characters, no UI, high resolution 2048x2048.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/b0ef232d3f2dc94c7533994c456da9d0.webp",
+  "GeneratedAtUtc": "2026-07-08T23:20:35.0842434Z",
+  "Files": {
+    "star_destroyer_debris_field_background": "Assets/_Project/Art/Stages/star_destroyer_debris_field/star_destroyer_debris_field_background.webp"
+  }
+}

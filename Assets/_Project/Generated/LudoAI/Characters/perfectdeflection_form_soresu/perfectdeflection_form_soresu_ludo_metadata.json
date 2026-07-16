@@ -1,0 +1,15 @@
+﻿{
+    "Title":  "PerfectDeflection â€” Form Soresu (Defensive, reflects projectiles)",
+    "Slug":  "perfectdeflection_form_soresu",
+    "Prompt":  "Star Wars Jedi in Form Soresu defensive stance, lightsaber angled diagonally to deflect incoming fire, compact cautious crouch, tight guarded posture, calm focused expression, green kyber blade with steady glow, layered protective robes and pauldrons in muted greens and greys, clean cel-shaded Smash Bros Ultimate key art style, bold readable silhouette, vibrant flat shading, subtle rim light, transparent background. Sprite sheet: 6x4 grid showing idle, walk, jump, light tap, heavy sweep, perfect-deflection pose (blade angled reflecting a bolt with a curved energy arc), side special, up special, down special, hit react, KO â€” evenly spaced cells, transparent background, consistent lighting and proportions, 2048x2048 game-ready.",
+    "ImageUrl":  "https://storage.googleapis.com/ludo-assets/api/6811897ac033a2863eca3c820b8c5fc3.webp",
+    "AnimationSpritesheetUrl":  "https://storage.googleapis.com/ludo-assets/api/2ab4167f9773ee61639b61f3874165d1.webp",
+    "AnimationGifUrl":  null,
+    "AnimationVideoUrl":  "https://storage.googleapis.com/ludo-assets/api/16dc06ee0009607692c7882213e407cb.mp4",
+    "GeneratedAtUtc":  "2026-07-08T20:20:35.9300630Z",
+    "Files":  {
+                  "perfectdeflection_form_soresu_key_art":  "Assets/_Project/Generated/LudoAI/Characters/perfectdeflection_form_soresu/perfectdeflection_form_soresu_key_art.webp",
+                  "perfectdeflection_form_soresu_animation_spritesheet":  "Assets/_Project/Generated/LudoAI/Characters/perfectdeflection_form_soresu/perfectdeflection_form_soresu_animation_spritesheet.webp",
+                  "perfectdeflection_form_soresu_animation_video":  "Assets/_Project/Generated/LudoAI/Characters/perfectdeflection_form_soresu/perfectdeflection_form_soresu_animation_video.mp4"
+              }
+}

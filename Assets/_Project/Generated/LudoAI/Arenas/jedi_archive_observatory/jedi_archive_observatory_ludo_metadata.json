@@ -1,0 +1,10 @@
+{
+  "Title": "Jedi Archive Observatory",
+  "Slug": "jedi_archive_observatory",
+  "Prompt": "Super Smash Bros Ultimate style floating battle arena, serene Jedi archive observatory floating among holographic star maps, central polished stone platform, two mid-level archive balcony platforms and one high circular holoprojector platform, open sides and bottom for eliminations, blue hologram glow, readable side-view platform fighter layout, clean cel-shaded game key art, no characters, no UI, high resolution 2048x2048.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/00cf3918354ef1ac0933798528524f28.webp",
+  "GeneratedAtUtc": "2026-07-08T23:20:44.5235790Z",
+  "Files": {
+    "jedi_archive_observatory_background": "Assets/_Project/Art/Stages/jedi_archive_observatory/jedi_archive_observatory_background.webp"
+  }
+}

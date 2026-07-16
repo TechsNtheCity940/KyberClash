@@ -1,0 +1,15 @@
+﻿{
+    "Title":  "CounterStance â€” Form Shii-Cho (Balanced, generates meter on block)",
+    "Slug":  "counterstance_form_shii_cho",
+    "Prompt":  "Star Wars Jedi in Form Shii-Cho stance, balanced grounded guard with lightsaber held horizontally across the body in a relaxed ready position, feet shoulder-width apart, calm confident neutral expression, blue-white kyber blade with soft glow, earthy tan and brown tunic, utility belt, clean cel-shaded Smash Bros Ultimate key art style, bold readable silhouette, vibrant flat shading, subtle rim light, transparent background. Sprite sheet: 6x4 grid showing idle, walk, jump, light slash, heavy slash, block-counter stance (blade bracing a glowing energy shield that builds a meter aura), side special, up special, down special, hit react, KO â€” evenly spaced cells, transparent background, consistent lighting and proportions, 2048x2048 game-ready.",
+    "ImageUrl":  "https://storage.googleapis.com/ludo-assets/api/ea3be5e0a255a80c40100409ac02f045.webp",
+    "AnimationSpritesheetUrl":  "https://storage.googleapis.com/ludo-assets/api/7606ac6b8607435e5ddca5a67ebf6667.webp",
+    "AnimationGifUrl":  null,
+    "AnimationVideoUrl":  "https://storage.googleapis.com/ludo-assets/api/d6d87567fe49982ea5edecef83ecf68c.mp4",
+    "GeneratedAtUtc":  "2026-07-08T20:17:05.1937834Z",
+    "Files":  {
+                  "counterstance_form_shii_cho_key_art":  "Assets/_Project/Generated/LudoAI/Characters/counterstance_form_shii_cho/counterstance_form_shii_cho_key_art.webp",
+                  "counterstance_form_shii_cho_animation_spritesheet":  "Assets/_Project/Generated/LudoAI/Characters/counterstance_form_shii_cho/counterstance_form_shii_cho_animation_spritesheet.webp",
+                  "counterstance_form_shii_cho_animation_video":  "Assets/_Project/Generated/LudoAI/Characters/counterstance_form_shii_cho/counterstance_form_shii_cho_animation_video.mp4"
+              }
+}

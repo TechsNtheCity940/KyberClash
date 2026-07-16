@@ -1,0 +1,10 @@
+{
+  "Title": "Neon Underworld Dock",
+  "Slug": "neon_underworld_dock",
+  "Prompt": "Super Smash Bros Ultimate style floating battle arena, neon underworld spaceport dock suspended above rainy city traffic, central industrial landing platform, two side catwalk platforms and one high billboard platform, open edges for knock-off eliminations, cyan magenta neon, wet metal reflections, readable side-view platform fighter layout, clean cel-shaded game key art, no characters, no UI, high resolution 2048x2048.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/c4e5ea3b1f6d5b5b3387c34e422f54e6.webp",
+  "GeneratedAtUtc": "2026-07-08T23:20:57.4276164Z",
+  "Files": {
+    "neon_underworld_dock_background": "Assets/_Project/Art/Stages/neon_underworld_dock/neon_underworld_dock_background.webp"
+  }
+}

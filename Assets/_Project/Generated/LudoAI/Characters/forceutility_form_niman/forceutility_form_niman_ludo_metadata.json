@@ -1,0 +1,15 @@
+{
+  "Title": "ForceUtility — Form Niman (Balanced, Force powers, utility)",
+  "Slug": "forceutility_form_niman",
+  "Prompt": "Star Wars Jedi in Form Niman balanced stance, one hand holding a lightsaber at the side and the other hand extended channeling a glowing Force aura, harmonious neutral expression, medium balanced build, teal-cyan kyber blade with soft glow, balanced robe in teal and beige with sash, clean cel-shaded Smash Bros Ultimate key art style, bold readable silhouette, vibrant flat shading, subtle rim light, transparent background. Sprite sheet: 6x4 grid showing idle, walk, jump, light slash, heavy slash, force-push (hand thrust with expanding ring shockwave), force-pull (hand cinching pulling a distant glow), up special, down special, hit react, KO — evenly spaced cells, transparent background, consistent lighting and proportions, 2048x2048 game-ready.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/37490f9499498d9e190896e51288211b.webp",
+  "AnimationSpritesheetUrl": "https://storage.googleapis.com/ludo-assets/api/c3258620cd0f6eb889e1056c7bd62ffd.webp",
+  "AnimationGifUrl": null,
+  "AnimationVideoUrl": "https://storage.googleapis.com/ludo-assets/api/ffbce8a4182ea1c38307af63587c281d.mp4",
+  "GeneratedAtUtc": "2026-07-08T22:47:34.7892776Z",
+  "Files": {
+    "forceutility_form_niman_key_art": "Assets/_Project/Generated/LudoAI/Characters/forceutility_form_niman/forceutility_form_niman_key_art.webp",
+    "forceutility_form_niman_animation_spritesheet": "Assets/_Project/Generated/LudoAI/Characters/forceutility_form_niman/forceutility_form_niman_animation_spritesheet.webp",
+    "forceutility_form_niman_animation_video": "Assets/_Project/Generated/LudoAI/Characters/forceutility_form_niman/forceutility_form_niman_animation_video.mp4"
+  }
+}

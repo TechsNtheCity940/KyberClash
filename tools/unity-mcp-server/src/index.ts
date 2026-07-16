@@ -1,0 +1,745 @@
+#!/usr/bin/env node
+/**
+ * unity-mcp-server – Lightweight MCP server for any Unity project.
+ * Exposes tools for project info, build scenes, agent docs, packages, code, assets, and more. No Unity Editor required.
+ */
+
+import { resolve } from "node:path";
+import { z } from "zod";
+import * as R from "./readers/index.js";
+import { searchToolsCatalog } from "./tools-catalog.js";
+
+function getProjectRoot(): string {
+  const env = process.env.UNITY_PROJECT_PATH;
+  if (env) return resolve(env);
+  console.error("UNITY_PROJECT_PATH is required. Set it in your MCP client config (e.g. Cursor) to your Unity project root.");
+  process.exit(1);
+  return "";
+}
+
+async function main() {
+  const projectRoot = getProjectRoot();
+
+  const { McpServer } = await import("@modelcontextprotocol/sdk/server/mcp.js");
+  const { StdioServerTransport } = await import("@modelcontextprotocol/sdk/server/stdio.js");
+
+  const server = new McpServer({
+    name: "unity-mcp-server",
+    version: "1.6.0",
+  });
+
+  const text = (s: string) => ({ content: [{ type: "text" as const, text: s }] });
+  const json = (o: unknown) => text(JSON.stringify(o, null, 2));
+
+  // --- Existing + expanded project info ---
+  server.registerTool(
+    "get_project_info",
+    {
+      description: "Get Unity project info: path, Unity version, build scene count, player/product name.",
+      inputSchema: {},
+    },
+    async () => {
+      const unityVersion = R.getUnityVersion(projectRoot);
+      const scenes = R.getBuildScenes(projectRoot);
+      const player = R.getPlayerSettings(projectRoot);
+      const lines = [
+        `Project root: ${projectRoot}`,
+        `Unity version: ${unityVersion}`,
+        `Build scenes: ${scenes.length}`,
+        ...scenes.map((s) => `  ${s.index}: ${s.name} (${s.path})`),
+        "",
+        "Player / product (if available):",
+        ...Object.entries(player).map(([k, v]) => `  ${k}: ${v}`),
+      ];
+      return text(lines.join("\n"));
+    }
+  );
+
+  server.registerTool(
+    "list_build_scenes",
+    { description: "List scenes in EditorBuildSettings (build order) as JSON.", inputSchema: {} },
+    async () => json(R.getBuildScenes(projectRoot))
+  );
+
+  server.registerTool(
+    "read_agent_docs",
+    {
+      description: "Read .agents/AGENT.md and optionally REPO_UNDERSTANDING.md.",
+      inputSchema: {
+        include_repo_understanding: z.boolean().optional().describe("If true, also return REPO_UNDERSTANDING.md").default(false),
+      },
+    },
+    async (args: unknown) => {
+      const include = (args as { include_repo_understanding?: boolean })?.include_repo_understanding ?? false;
+      let content = R.readFileSafe(projectRoot, ".agents", "AGENT.md") ?? "(No .agents/AGENT.md found)";
+      if (include) {
+        const rep = R.readFileSafe(projectRoot, "REPO_UNDERSTANDING.md");
+        if (rep) content += "\n\n---\n\n# REPO_UNDERSTANDING.md\n\n" + rep;
+      }
+      return text(content);
+    }
+  );
+
+  // --- 1. Project & package info ---
+  server.registerTool(
+    "get_player_settings",
+    { description: "Get Player/ProjectSettings (product name, company, bundle ID, version, etc.).", inputSchema: {} },
+    async () => json(R.getPlayerSettings(projectRoot))
+  );
+
+  server.registerTool(
+    "list_packages",
+    { description: "List Unity packages from Packages/manifest.json (and optional packages-lock.json).", inputSchema: {} },
+    async () => json(R.getPackages(projectRoot))
+  );
+
+  server.registerTool(
+    "get_quality_settings",
+    { description: "Get QualitySettings (quality levels) from ProjectSettings.", inputSchema: {} },
+    async () => json(R.getQualitySettings(projectRoot))
+  );
+
+  server.registerTool(
+    "get_scripting_defines",
+    { description: "Get global and per-assembly scripting define symbols.", inputSchema: {} },
+    async () => json(R.getScriptingDefines(projectRoot))
+  );
+
+  // --- 2. Code & assemblies ---
+  server.registerTool(
+    "list_assemblies",
+    {
+      description: "List assembly definitions (.asmdef) with path, name, references, platforms.",
+      inputSchema: {},
+    },
+    async () => json(R.getAssemblyDefinitions(projectRoot))
+  );
+  server.registerTool(
+    "get_assembly_for_path",
+    {
+      description: "Get the assembly (asmdef name and path) that contains the given asset path (script or folder).",
+      inputSchema: { asset_path: z.string().describe("e.g. Assets/Scripts/Player.cs or Assets/Scripts") },
+    },
+    async (args: unknown) => json(R.getAssemblyForPath(projectRoot, (args as { asset_path: string }).asset_path))
+  );
+  server.registerTool(
+    "list_scripts_by_assembly",
+    {
+      description: "List C# script paths that belong to a given assembly (by name or asmdef path).",
+      inputSchema: { assembly_name_or_path: z.string().describe("Assembly name e.g. Assembly-CSharp or path to .asmdef") },
+    },
+    async (args: unknown) => json(R.listScriptsByAssembly(projectRoot, (args as { assembly_name_or_path: string }).assembly_name_or_path))
+  );
+  server.registerTool(
+    "list_asmdef_references",
+    {
+      description: "List assembly names that reference the given assembly (reverse dependencies).",
+      inputSchema: { assembly_name: z.string().describe("Assembly name e.g. MyGame.Runtime") },
+    },
+    async (args: unknown) => json(R.listAsmdefReferences(projectRoot, (args as { assembly_name: string }).assembly_name))
+  );
+
+  server.registerTool(
+    "list_scripts",
+    {
+      description: "List all C# scripts under Assets. Optionally filter by folder prefix (e.g. Scripts).",
+      inputSchema: {
+        folder: z.string().optional().describe("Optional folder under Assets, e.g. Scripts/Runtime"),
+      },
+    },
+    async (args: unknown) => json(R.listScripts(projectRoot, (args as { folder?: string })?.folder))
+  );
+
+  server.registerTool(
+    "find_scripts_by_content",
+    {
+      description: "Find C# scripts that contain a type or pattern (e.g. MonoBehaviour, ScriptableObject, or custom). Optionally filter by namespace.",
+      inputSchema: {
+        pattern: z.string().describe("Pattern to search for, e.g. MonoBehaviour or a type name"),
+        namespace_filter: z.string().optional().describe("Optional namespace pattern, e.g. Game.*"),
+      },
+    },
+    async (args: unknown) => {
+      const a = args as { pattern: string; namespace_filter?: string };
+      return json(R.findScriptsByContent(projectRoot, a.pattern, a.namespace_filter));
+    }
+  );
+
+  // --- 3. Scenes ---
+  server.registerTool(
+    "list_all_scenes",
+    { description: "List all .unity scene files under Assets (not only build-indexed).", inputSchema: {} },
+    async () => json(R.getAllScenes(projectRoot))
+  );
+
+  server.registerTool(
+    "get_scene_summary",
+    {
+      description: "Get a short summary of a scene: root GameObject names and approximate component count.",
+      inputSchema: { scene_path: z.string().describe("Path relative to project, e.g. Assets/Scenes/Main.unity") },
+    },
+    async (args: unknown) => json(R.getSceneSummary(projectRoot, (args as { scene_path: string }).scene_path))
+  );
+  server.registerTool(
+    "get_scene_components_by_type",
+    {
+      description: "Get GameObjects in a scene that have a given component type (e.g. Camera, Light).",
+      inputSchema: {
+        scene_path: z.string().describe("e.g. Assets/Scenes/Main.unity"),
+        component_type: z.string().describe("e.g. Camera, Light, Rigidbody"),
+      },
+    },
+    async (args: unknown) => {
+      const a = args as { scene_path: string; component_type: string };
+      return json(R.getSceneComponentsByType(projectRoot, a.scene_path, a.component_type));
+    }
+  );
+  server.registerTool(
+    "get_scene_objects_by_tag",
+    {
+      description: "Get GameObjects in a scene that have a given tag (e.g. Spawn, Respawn).",
+      inputSchema: {
+        scene_path: z.string().describe("e.g. Assets/Scenes/Main.unity"),
+        tag_name: z.string().describe("Tag name, e.g. Spawn"),
+      },
+    },
+    async (args: unknown) => {
+      const a = args as { scene_path: string; tag_name: string };
+      return json(R.getSceneObjectsByTag(projectRoot, a.scene_path, a.tag_name));
+    }
+  );
+  server.registerTool(
+    "get_all_components_by_type",
+    {
+      description: "Get all occurrences of a component type across all scenes (scene path + GameObject name).",
+      inputSchema: { component_type: z.string().describe("e.g. Camera, Light") },
+    },
+    async (args: unknown) => json(R.getAllComponentsByType(projectRoot, (args as { component_type: string }).component_type))
+  );
+  server.registerTool(
+    "get_scene_hierarchy_flat",
+    {
+      description: "Get a flat list of all GameObjects in a scene (name and layer).",
+      inputSchema: { scene_path: z.string().describe("e.g. Assets/Scenes/Main.unity") },
+    },
+    async (args: unknown) => json(R.getSceneHierarchyFlat(projectRoot, (args as { scene_path: string }).scene_path))
+  );
+  server.registerTool(
+    "get_lighting_scene_info",
+    {
+      description: "Get lighting-related info for a scene: referenced lighting assets and GI workflow mode if present.",
+      inputSchema: { scene_path: z.string().describe("e.g. Assets/Scenes/Main.unity") },
+    },
+    async (args: unknown) => json(R.getLightingSceneInfo(projectRoot, (args as { scene_path: string }).scene_path))
+  );
+
+  // --- 4. Prefabs ---
+  server.registerTool(
+    "list_prefabs",
+    {
+      description: "List all .prefab files. Optionally filter by path prefix under Assets.",
+      inputSchema: { path_prefix: z.string().optional().describe("e.g. Prefabs/Characters") },
+    },
+    async (args: unknown) => json(R.getPrefabs(projectRoot, (args as { path_prefix?: string })?.path_prefix))
+  );
+  server.registerTool("list_prefab_variants", { description: "List prefabs that are variants of another prefab.", inputSchema: {} }, async () => json(R.listPrefabVariants(projectRoot)));
+  server.registerTool(
+    "list_prefabs_with_component",
+    {
+      description: "List prefabs that contain a given component type (e.g. Animator, Rigidbody).",
+      inputSchema: { component_type: z.string().describe("e.g. Animator, Rigidbody") },
+    },
+    async (args: unknown) => json(R.listPrefabsWithComponent(projectRoot, (args as { component_type: string }).component_type))
+  );
+  server.registerTool(
+    "get_prefab_summary",
+    {
+      description: "Get a short summary of a prefab: root name, component count, and component type names.",
+      inputSchema: { prefab_path: z.string().describe("e.g. Assets/Prefabs/Player.prefab") },
+    },
+    async (args: unknown) => json(R.getPrefabSummary(projectRoot, (args as { prefab_path: string }).prefab_path))
+  );
+
+  // --- 5. Assets & references ---
+  server.registerTool(
+    "find_references",
+    {
+      description: "Find all assets (scenes, prefabs, materials, etc.) that reference the given asset. Pass asset path (e.g. Assets/Texture.png) or GUID.",
+      inputSchema: {
+        asset_path_or_guid: z.string().describe("Asset path relative to project (e.g. Assets/My.asset) or 32-char GUID"),
+      },
+    },
+    async (args: unknown) => {
+      const input = (args as { asset_path_or_guid: string }).asset_path_or_guid.trim();
+      let guid: string;
+      if (/^[a-f0-9]{32}$/i.test(input)) {
+        guid = input;
+      } else {
+        guid = R.getGuidFromMeta(projectRoot, input) ?? "";
+        if (!guid) return text(`No .meta found for ${input}; cannot resolve GUID.`);
+      }
+      const refs = R.findReferencesToGuid(projectRoot, guid);
+      return json({ guid, references: refs });
+    }
+  );
+
+  server.registerTool(
+    "get_asset_folder_tree",
+    {
+      description: "Get a tree of Assets folder (directories and file names). Useful for understanding project layout.",
+      inputSchema: { max_depth: z.number().optional().describe("Max folder depth, default 4").default(4) },
+    },
+    async (args: unknown) => json(R.getAssetFolderTree(projectRoot, (args as { max_depth?: number })?.max_depth ?? 4))
+  );
+
+  server.registerTool(
+    "list_assets_by_extension",
+    {
+      description: "List assets by file extension (e.g. .png, .fbx, .mp3). Optionally under a folder.",
+      inputSchema: {
+        extension: z.string().describe("e.g. .png, .fbx, .mp3"),
+        folder: z.string().optional().describe("Optional folder under Assets"),
+      },
+    },
+    async (args: unknown) => {
+      const a = args as { extension: string; folder?: string };
+      const ext = a.extension.startsWith(".") ? a.extension : `.${a.extension}`;
+      return json(R.listAssetsByExtension(projectRoot, ext, a.folder));
+    }
+  );
+  server.registerTool("list_video_clips", { description: "List video clip assets (.mp4, .mov, .webm, .avi, .asf).", inputSchema: {} }, async () => json(R.listVideoClips(projectRoot)));
+  server.registerTool("list_legacy_font_assets", { description: "List legacy font assets (.fontsettings, .ttf, .otf) — not TMP.", inputSchema: {} }, async () => json(R.listLegacyFontAssets(projectRoot)));
+  server.registerTool("list_render_textures", { description: "List RenderTexture (.renderTexture) assets.", inputSchema: {} }, async () => json(R.listRenderTextures(projectRoot)));
+  server.registerTool("list_terrain_data", { description: "List TerrainData and TerrainLayer .asset files.", inputSchema: {} }, async () => json(R.listTerrainData(projectRoot)));
+  server.registerTool("list_lighting_settings_assets", { description: "List lighting-related .asset files (LightingSettings, lightmap, etc.).", inputSchema: {} }, async () => json(R.listLightingSettingsAssets(projectRoot)));
+  server.registerTool(
+    "search_assets_by_name",
+    {
+      description: "Search Assets (and optionally Packages) by file or folder name pattern (e.g. Player, *Menu*).",
+      inputSchema: {
+        name_pattern: z.string().describe("Pattern to match; use * as wildcard"),
+        include_packages: z.boolean().optional().describe("If true, also search Packages").default(false),
+      },
+    },
+    async (args: unknown) => {
+      const a = args as { name_pattern: string; include_packages?: boolean };
+      return json(R.searchAssetsByName(projectRoot, a.name_pattern, a.include_packages));
+    }
+  );
+  server.registerTool(
+    "get_texture_meta",
+    {
+      description: "Get texture .meta info (maxTextureSize, width/height, spriteMode, spritePixelsToUnits) for a texture path.",
+      inputSchema: { texture_path: z.string().describe("e.g. Assets/Textures/Icon.png") },
+    },
+    async (args: unknown) => json(R.getTextureMeta(projectRoot, (args as { texture_path: string }).texture_path))
+  );
+  server.registerTool(
+    "search_project",
+    {
+      description: "Combined search: by asset name pattern, script content pattern, and/or referrers of an asset path. Returns assets, scripts, and optionally referrers.",
+      inputSchema: {
+        name_pattern: z.string().optional().describe("e.g. Player or *Menu*"),
+        script_pattern: z.string().optional().describe("e.g. MonoBehaviour or GameManager"),
+        referrer_of_path: z.string().optional().describe("Asset path; returns assets that reference it"),
+        include_packages: z.boolean().optional().default(false),
+      },
+    },
+    async (args: unknown) => {
+      const a = args as { name_pattern?: string; script_pattern?: string; referrer_of_path?: string; include_packages?: boolean };
+      return json(R.searchProject(projectRoot, { namePattern: a.name_pattern, scriptPattern: a.script_pattern, referrerOfPath: a.referrer_of_path, includePackages: a.include_packages ?? false }));
+    }
+  );
+  server.registerTool(
+    "get_meta_for_asset",
+    { description: "Read .meta for any asset path (guid and key-value pairs).", inputSchema: { asset_path: z.string().describe("e.g. Assets/Models/Character.fbx") } },
+    async (args: unknown) => json(R.getMetaForAsset(projectRoot, (args as { asset_path: string }).asset_path))
+  );
+  server.registerTool("get_broken_asset_refs", { description: "List prefabs, scenes, materials with any missing GUID reference (not only scripts).", inputSchema: {} }, async () => json(R.getBrokenAssetRefs(projectRoot)));
+  server.registerTool("list_scriptable_objects", { description: "List .asset files that are ScriptableObject instances (data assets).", inputSchema: {} }, async () => json(R.listScriptableObjectAssets(projectRoot)));
+
+  // --- 6. Materials & shaders ---
+  server.registerTool(
+    "list_materials",
+    {
+      description: "List .mat materials; optionally under a folder. Includes shader GUID when readable.",
+      inputSchema: { folder: z.string().optional() },
+    },
+    async (args: unknown) => json(R.getMaterials(projectRoot, (args as { folder?: string })?.folder))
+  );
+  server.registerTool(
+    "list_materials_using_shader",
+    {
+      description: "List material paths that use a given shader (pass shader GUID or asset path).",
+      inputSchema: { shader_guid_or_path: z.string().describe("32-char shader GUID or path e.g. Assets/Shaders/My.shader") },
+    },
+    async (args: unknown) => json(R.listMaterialsUsingShader(projectRoot, (args as { shader_guid_or_path: string }).shader_guid_or_path))
+  );
+
+  server.registerTool(
+    "list_shaders",
+    { description: "List all .shader files in Assets and Packages.", inputSchema: {} },
+    async () => json(R.getShaders(projectRoot))
+  );
+
+  // --- 7. Animation ---
+  server.registerTool(
+    "list_animator_controllers",
+    { description: "List all Animator Controller (.controller) assets.", inputSchema: {} },
+    async () => json(R.getAnimatorControllers(projectRoot))
+  );
+
+  server.registerTool(
+    "list_animation_clips",
+    { description: "List all Animation Clip (.anim) assets.", inputSchema: {} },
+    async () => json(R.getAnimationClips(projectRoot))
+  );
+
+  server.registerTool(
+    "get_animator_states",
+    {
+      description: "Get state names from an Animator Controller (.controller) file.",
+      inputSchema: { controller_path: z.string().describe("e.g. Assets/Animations/Player.controller") },
+    },
+    async (args: unknown) => json(R.getAnimatorStates(projectRoot, (args as { controller_path: string }).controller_path))
+  );
+  server.registerTool(
+    "get_animator_transitions",
+    {
+      description: "Get state names and transitions (from/to) from an Animator Controller.",
+      inputSchema: { controller_path: z.string().describe("e.g. Assets/Animations/Player.controller") },
+    },
+    async (args: unknown) => json(R.getAnimatorTransitions(projectRoot, (args as { controller_path: string }).controller_path))
+  );
+  server.registerTool("list_avatar_masks", { description: "List Avatar Mask (.mask) assets used by Animator.", inputSchema: {} }, async () => json(R.listAvatarMasks(projectRoot)));
+  server.registerTool("list_animator_override_controllers", { description: "List AnimatorOverrideController .controller assets.", inputSchema: {} }, async () => json(R.listAnimatorOverrideControllers(projectRoot)));
+
+  // --- 8. Audio ---
+  server.registerTool(
+    "list_audio_clips",
+    { description: "List audio clip files (.wav, .mp3, .ogg, .aiff) under Assets.", inputSchema: {} },
+    async () => json(R.getAudioClips(projectRoot))
+  );
+
+  server.registerTool(
+    "list_audio_mixers",
+    { description: "List Audio Mixer (.mixer) assets.", inputSchema: {} },
+    async () => json(R.getAudioMixers(projectRoot))
+  );
+
+  // --- 9. Addressables ---
+  server.registerTool(
+    "get_addressables_info",
+    { description: "Get Addressables groups and config path if the project uses Addressables.", inputSchema: {} },
+    async () => json(R.getAddressablesInfo(projectRoot))
+  );
+
+  // --- 10. Localization ---
+  server.registerTool(
+    "get_localization_tables",
+    { description: "List localization table files under Assets/Localization if present.", inputSchema: {} },
+    async () => json(R.getLocalizationTables(projectRoot))
+  );
+
+  // --- 11. Input ---
+  server.registerTool(
+    "get_input_axes",
+    { description: "Get input axes from InputManager (name, descriptive name, positive button).", inputSchema: {} },
+    async () => json(R.getInputAxes(projectRoot))
+  );
+
+  // --- 12. Tags & layers ---
+  server.registerTool(
+    "get_tags_and_layers",
+    { description: "Get Tags and Layers from TagManager.", inputSchema: {} },
+    async () => json(R.getTagsAndLayers(projectRoot))
+  );
+
+  // --- 13. Testing ---
+  server.registerTool(
+    "list_test_assemblies",
+    { description: "List assembly definitions that look like test assemblies (path contains test/editor).", inputSchema: {} },
+    async () => json(R.getTestAssemblies(projectRoot))
+  );
+
+  // --- 14. Docs & conventions ---
+  server.registerTool(
+    "get_repo_docs",
+    {
+      description: "Read README, CONTRIBUTING, .cursorrules, CODING_STANDARDS, STYLE if present at project root.",
+      inputSchema: {},
+    },
+    async () => json(R.getRepoDocs(projectRoot))
+  );
+
+  // --- 15. CI / versioning ---
+  server.registerTool(
+    "get_project_version",
+    { description: "Get project/bundle version from PlayerSettings.", inputSchema: {} },
+    async () => text(R.getProjectVersion(projectRoot))
+  );
+
+  server.registerTool(
+    "get_changelog",
+    { description: "Read CHANGELOG.md or CHANGELOG if present.", inputSchema: {} },
+    async () => {
+      const content = R.getChangelog(projectRoot);
+      return text(content ?? "(No CHANGELOG found)");
+    }
+  );
+
+  // --- 16. Physics ---
+  server.registerTool("get_physics_settings", { description: "Get Physics/DynamicsManager or Physics2D settings (key-value).", inputSchema: {} }, async () => json(R.getPhysicsSettings(projectRoot)));
+
+  // --- Project settings (audio, nav, XR, script order, VC, layer matrix, cloud) ---
+  server.registerTool("get_audio_settings", { description: "Get AudioManager.asset (global volume, reverb, DSP buffer).", inputSchema: {} }, async () => json(R.getAudioSettings(projectRoot)));
+  server.registerTool("get_navigation_settings", { description: "Get NavMesh/agent settings from ProjectSettings if present.", inputSchema: {} }, async () => json(R.getNavigationSettings(projectRoot)));
+  server.registerTool("get_xr_settings", { description: "Get XR/VR project settings (XRSettings.asset).", inputSchema: {} }, async () => json(R.getXrSettings(projectRoot)));
+  server.registerTool("get_script_execution_order", { description: "Get script execution order (MonoManager: script GUID and order).", inputSchema: {} }, async () => json(R.getScriptExecutionOrder(projectRoot)));
+  server.registerTool("get_version_control_settings", { description: "Get Unity version control settings (serialization mode, visible meta files).", inputSchema: {} }, async () => json(R.getVersionControlSettings(projectRoot)));
+  server.registerTool("get_layer_collision_matrix", { description: "Get layer collision matrix and layer names from TagManager/DynamicsManager.", inputSchema: {} }, async () => json(R.getLayerCollisionMatrix(projectRoot)));
+  server.registerTool("get_cloud_services_config", { description: "Get Unity Cloud / Unity Connect config if present.", inputSchema: {} }, async () => json(R.getCloudServicesConfig(projectRoot)));
+  server.registerTool("get_package_dependency_graph", { description: "Get package dependency graph (nodes and edges from manifest + lock).", inputSchema: {} }, async () => json(R.getPackageDependencyGraph(projectRoot)));
+  server.registerTool("list_package_samples", { description: "List Samples folders or sample paths under Packages.", inputSchema: {} }, async () => json(R.listPackageSamples(projectRoot)));
+  server.registerTool("list_unity_hub_projects", { description: "List Unity projects from Unity Hub (projects-v1.json). Does not require UNITY_PROJECT_PATH.", inputSchema: {} }, async () => json(R.listUnityHubProjects()));
+
+  // --- 17. Render pipelines ---
+  server.registerTool("list_render_pipelines", { description: "List render pipeline assets and volume profiles (URP/HDRP).", inputSchema: {} }, async () => json(R.listRenderPipelines(projectRoot)));
+
+  // --- 18. Timeline ---
+  server.registerTool("list_timeline_playables", { description: "List Timeline .playable assets.", inputSchema: {} }, async () => json(R.listTimelinePlayables(projectRoot)));
+
+  // --- 19. Sprites / 2D ---
+  server.registerTool("list_sprite_atlases", { description: "List Sprite Atlas (.spriteatlas) assets.", inputSchema: {} }, async () => json(R.listSpriteAtlases(projectRoot)));
+  server.registerTool("list_tilemap_assets", { description: "List tilemap-related .asset files.", inputSchema: {} }, async () => json(R.listTilemapAssets(projectRoot)));
+  server.registerTool("list_sprite_assets", { description: "List textures configured as sprites (spriteMode in .meta).", inputSchema: {} }, async () => json(R.listSpriteAssets(projectRoot)));
+
+  // --- 20. Shader Graph / VFX ---
+  server.registerTool("list_shader_graphs", { description: "List Shader Graph (.shadergraph) assets.", inputSchema: {} }, async () => json(R.listShaderGraphs(projectRoot)));
+  server.registerTool("list_vfx_graphs", { description: "List VFX Graph (.vfx) assets.", inputSchema: {} }, async () => json(R.listVfxGraphs(projectRoot)));
+
+  // --- 21. TextMeshPro ---
+  server.registerTool("list_tmp_fonts", { description: "List TMP/font-related assets.", inputSchema: {} }, async () => json(R.listTmpFonts(projectRoot)));
+  server.registerTool("get_tmp_settings_path", { description: "Get path to TMP Settings asset if present.", inputSchema: {} }, async () => json(R.getTmpSettingsPath(projectRoot)));
+
+  // --- 22. UI Toolkit ---
+  server.registerTool("list_ui_documents", { description: "List UI Toolkit .uxml and .uss files.", inputSchema: {} }, async () => json(R.listUiDocuments(projectRoot)));
+
+  // --- 23. New Input System ---
+  server.registerTool("list_input_action_assets", { description: "List New Input System .inputactions assets.", inputSchema: {} }, async () => json(R.listInputActionAssets(projectRoot)));
+  server.registerTool(
+    "get_input_actions_summary",
+    { description: "Get action maps and actions from an .inputactions file.", inputSchema: { path: z.string().describe("e.g. Assets/Input/Player.inputactions") } },
+    async (args: unknown) => json(R.getInputActionsSummary(projectRoot, (args as { path: string }).path))
+  );
+
+  // --- 24. Presets ---
+  server.registerTool("list_presets", { description: "List .preset assets.", inputSchema: {} }, async () => json(R.listPresets(projectRoot)));
+
+  // --- 25. Editor scripts ---
+  server.registerTool("list_editor_scripts", { description: "List C# scripts in Editor folders or with Editor in path.", inputSchema: {} }, async () => json(R.listEditorScripts(projectRoot)));
+
+  // --- 26. Prefab script refs ---
+  server.registerTool(
+    "get_prefab_script_guids",
+    { description: "Get script GUIDs (MonoBehaviour) referenced by a prefab.", inputSchema: { prefab_path: z.string().describe("e.g. Assets/Prefabs/Player.prefab") } },
+    async (args: unknown) => json(R.getPrefabScriptGuids(projectRoot, (args as { prefab_path: string }).prefab_path))
+  );
+
+  // --- 27. Assembly dependency graph ---
+  server.registerTool("get_assembly_dependency_graph", { description: "Get assembly definition dependency graph (nodes and edges).", inputSchema: {} }, async () => json(R.getAssemblyDependencyGraph(projectRoot)));
+
+  // --- 28. CI configs ---
+  server.registerTool("list_ci_configs", { description: "List CI config files (.github/workflows, Jenkinsfile, unity-cloud-build).", inputSchema: {} }, async () => json(R.listCiConfigs(projectRoot)));
+
+  // --- 29. Large assets ---
+  server.registerTool(
+    "list_large_assets",
+    { description: "List assets over a size threshold (default 5 MB).", inputSchema: { min_size_mb: z.number().optional().default(5) } },
+    async (args: unknown) => json(R.listLargeAssets(projectRoot, (args as { min_size_mb?: number })?.min_size_mb ?? 5))
+  );
+
+  // --- 30. PlayFab ---
+  server.registerTool("get_playfab_config", { description: "Get PlayFab config (title ID, config paths) from project. No secrets.", inputSchema: {} }, async () => json(R.getPlayFabConfig(projectRoot)));
+
+  // --- 31. Figma ---
+  server.registerTool("list_figma_related_assets", { description: "List assets in Figma folder or with figma in path.", inputSchema: {} }, async () => json(R.listFigmaRelatedAssets(projectRoot)));
+
+  // --- 32. Firebase ---
+  server.registerTool("get_firebase_config", { description: "Get Firebase config (GoogleServices path, project ID). No secrets.", inputSchema: {} }, async () => json(R.getFirebaseConfig(projectRoot)));
+
+  // --- 33. Steam ---
+  server.registerTool("get_steam_config", { description: "Get Steam config (steam_appid.txt, Steamworks path).", inputSchema: {} }, async () => json(R.getSteamConfig(projectRoot)));
+
+  // --- 34. Discord ---
+  server.registerTool("get_discord_config", { description: "Detect Discord SDK path in Plugins.", inputSchema: {} }, async () => json(R.getDiscordConfig(projectRoot)));
+
+  // --- 35. FMOD ---
+  server.registerTool("get_fmod_config", { description: "Get FMOD config (banks path, bank files).", inputSchema: {} }, async () => json(R.getFmodConfig(projectRoot)));
+
+  // --- 36. Wwise ---
+  server.registerTool("get_wwise_config", { description: "Get Wwise config (sound banks, project paths).", inputSchema: {} }, async () => json(R.getWwiseConfig(projectRoot)));
+
+  // --- 37. Substance ---
+  server.registerTool("list_substance_assets", { description: "List Substance .sbsar and .sbs assets.", inputSchema: {} }, async () => json(R.listSubstanceAssets(projectRoot)));
+
+  // --- 38. SpeedTree ---
+  server.registerTool("list_speedtree_assets", { description: "List SpeedTree .spm and .stm assets.", inputSchema: {} }, async () => json(R.listSpeedTreeAssets(projectRoot)));
+
+  // --- 39. Lottie ---
+  server.registerTool("list_lottie_assets", { description: "List Lottie-related JSON assets.", inputSchema: {} }, async () => json(R.listLottieAssets(projectRoot)));
+
+  // --- 40. Analytics / crash ---
+  server.registerTool("get_analytics_or_crash_config", { description: "Detect analytics/crash reporting services (Unity, Sentry, Crashlytics, BugSnag).", inputSchema: {} }, async () => json(R.getAnalyticsOrCrashConfig(projectRoot)));
+
+  // --- 41. Ads ---
+  server.registerTool("get_ads_config", { description: "Detect ad SDK presence (Unity Ads, AdMob, ironSource).", inputSchema: {} }, async () => json(R.getAdsConfig(projectRoot)));
+
+  // --- 42. Git LFS ---
+  server.registerTool("get_git_lfs_tracked", { description: "Get Git LFS patterns from .gitattributes.", inputSchema: {} }, async () => json(R.getGitLfsTracked(projectRoot)));
+
+  // --- 43. Plastic SCM ---
+  server.registerTool("get_plastic_config", { description: "Get Plastic SCM config (.plastic, workspace name).", inputSchema: {} }, async () => json(R.getPlasticConfig(projectRoot)));
+
+  // --- 44–49. Unity 6 / Feb 2026 audit additions ---
+  server.registerTool("get_graphics_settings", { description: "Get Graphics settings (ProjectSettings/GraphicsSettings.asset).", inputSchema: {} }, async () => json(R.getGraphicsSettings(projectRoot)));
+  server.registerTool("get_time_settings", { description: "Get Time/Fixed timestep settings (TimeManager.asset).", inputSchema: {} }, async () => json(R.getTimeSettings(projectRoot)));
+  server.registerTool("list_subscenes", { description: "List ECS/DOTS .subscene assets.", inputSchema: {} }, async () => json(R.listSubscenes(projectRoot)));
+  server.registerTool("list_visual_scripting_assets", { description: "List Visual Scripting (Bolt/Unity) .asset files in Ludiq or com.unity.visualscripting.", inputSchema: {} }, async () => json(R.listVisualScriptingAssets(projectRoot)));
+  server.registerTool(
+    "get_script_public_api",
+    { description: "Parse a C# script and return class name, base type, public methods and fields (no Unity required).", inputSchema: { script_path: z.string().describe("e.g. Assets/Scripts/PlayerController.cs") } },
+    async (args: unknown) => json(R.getScriptPublicApi(projectRoot, (args as { script_path: string }).script_path))
+  );
+  server.registerTool("get_build_target_info", { description: "Get active build target / platform from ProjectSettings.", inputSchema: {} }, async () => json(R.getBuildTargetInfo(projectRoot)));
+  server.registerTool("get_feature_set_inference", { description: "Infer which Unity 6 feature sets (2D, ECS, AR, etc.) are used from package manifest.", inputSchema: {} }, async () => json(R.getFeatureSetInference(projectRoot)));
+
+  // --- Speed tools: go faster ---
+  server.registerTool("get_project_stats", { description: "One-shot project stats: script count, prefabs, scenes, materials, animations, assemblies, packages.", inputSchema: {} }, async () => json(R.getProjectStats(projectRoot)));
+  server.registerTool(
+    "get_scene_referenced_assets",
+    { description: "List asset paths referenced by a scene (GUIDs resolved). Helps build size and impact.", inputSchema: { scene_path: z.string().describe("e.g. Assets/Scenes/Main.unity") } },
+    async (args: unknown) => json(R.getSceneReferencedAssets(projectRoot, (args as { scene_path: string }).scene_path))
+  );
+  server.registerTool("detect_assembly_cycles", { description: "Detect circular references in assembly definitions. Speeds up fixing compile errors.", inputSchema: {} }, async () => json(R.detectAssemblyCycles(projectRoot)));
+  server.registerTool(
+    "find_script_references",
+    { description: "Find C# files that reference a type/class name. Speeds up refactoring.", inputSchema: { type_or_class_name: z.string().describe("e.g. GameManager or MonoBehaviour") } },
+    async (args: unknown) => json(R.findScriptReferences(projectRoot, (args as { type_or_class_name: string }).type_or_class_name))
+  );
+  server.registerTool("get_broken_script_refs", { description: "List prefabs/scenes that reference a script GUID with no .cs in project (missing script refs).", inputSchema: {} }, async () => json(R.getBrokenScriptRefs(projectRoot)));
+  server.registerTool(
+    "get_prefab_dependencies",
+    { description: "List asset paths referenced by a prefab. Helps impact analysis.", inputSchema: { prefab_path: z.string().describe("e.g. Assets/Prefabs/Player.prefab") } },
+    async (args: unknown) => json(R.getPrefabDependencies(projectRoot, (args as { prefab_path: string }).prefab_path))
+  );
+  server.registerTool("get_release_readiness", { description: "One-shot release readiness: version, build scene count, packages, broken refs, assembly cycles, large assets.", inputSchema: {} }, async () => json(R.getReleaseReadiness(projectRoot)));
+  server.registerTool(
+    "get_build_size_estimate",
+    {
+      description: "Estimate build size: aggregate assets referenced by all build scenes, total size and largest assets.",
+      inputSchema: { top_n: z.number().optional().describe("Number of largest assets to return, default 20").default(20) },
+    },
+    async (args: unknown) => json(R.getBuildSizeEstimate(projectRoot, (args as { top_n?: number })?.top_n ?? 20))
+  );
+
+  // --- Meta: tool discovery for AI ---
+  server.registerTool(
+    "search_tools",
+    {
+      description: "Find the most relevant tools by intent. Pass a query (e.g. find references, missing script, texture) to get matching tools with descriptions. Omit query to list all tools by category.",
+      inputSchema: { query: z.string().optional().describe("Optional search term to filter tools by name or description") },
+    },
+    async (args: unknown) => json(searchToolsCatalog((args as { query?: string })?.query))
+  );
+
+  // --- AI / ML / inference ---
+  server.registerTool(
+    "get_ai_ml_package_inventory",
+    {
+      description: "List Unity AI/ML packages in manifest (ML-Agents, Sentis, Barracuda, AI Navigation, Muse, Unity AI).",
+      inputSchema: {},
+    },
+    async () => json(R.getAiMlPackageInventory(projectRoot))
+  );
+
+  server.registerTool(
+    "list_ml_model_assets",
+    {
+      description: "List ML model files under Assets (.onnx, .nn, .pt, .tflite, .pb).",
+      inputSchema: {},
+    },
+    async () => json(R.listMlModelAssets(projectRoot))
+  );
+
+  server.registerTool(
+    "find_ai_related_scripts",
+    {
+      description: "Scan C# scripts for AI/ML patterns: Sentis, ML-Agents, NavMesh, behavior trees, ONNX, LLM API strings.",
+      inputSchema: {},
+    },
+    async () => json(R.findAiRelatedScripts(projectRoot))
+  );
+
+  server.registerTool(
+    "list_ai_prompt_or_config_assets",
+    {
+      description: "Heuristic scan for JSON/MD assets that look like prompts, RAG, or LLM config under Assets.",
+      inputSchema: {},
+    },
+    async () => json(R.listAiPromptOrConfigAssets(projectRoot))
+  );
+
+  server.registerTool(
+    "list_ml_agents_training_configs",
+    {
+      description: "Find ML-Agents trainer YAML configs in project root and common folders.",
+      inputSchema: {},
+    },
+    async () => json(R.listMlAgentsTrainingConfigs(projectRoot))
+  );
+
+  server.registerTool(
+    "get_ai_stack_summary",
+    {
+      description: "One-shot AI stack summary: packages, model files, script hits, ML-Agents configs. Set include_prompt_assets for prompt-like JSON/MD scan.",
+      inputSchema: {
+        include_prompt_assets: z.boolean().optional().describe("Also scan for prompt/RAG-like assets").default(false),
+      },
+    },
+    async (args: unknown) => {
+      const include = (args as { include_prompt_assets?: boolean })?.include_prompt_assets ?? false;
+      return json(R.getAiStackSummary(projectRoot, include));
+    }
+  );
+
+  server.registerTool(
+    "list_ai_skills",
+    {
+      description: "List bundled Unity AI agent skills shipped with unity-mcp-server (ML-Agents, Sentis, NavMesh NPC, LLM integration, audit workflows).",
+      inputSchema: {},
+    },
+    async () => json(R.listBundledAiSkills())
+  );
+
+  server.registerTool(
+    "read_ai_skill",
+    {
+      description: "Read a bundled Unity AI skill by id (from list_ai_skills). Teaches agents how to work on Unity AI features.",
+      inputSchema: { skill_id: z.string().describe("Skill folder id, e.g. unity-ml-agents") },
+    },
+    async (args: unknown) => {
+      const skill = R.readBundledAiSkill((args as { skill_id: string }).skill_id);
+      if (!skill) return text(`Skill not found: ${(args as { skill_id: string }).skill_id}`);
+      return text(skill.content);
+    }
+  );
+
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

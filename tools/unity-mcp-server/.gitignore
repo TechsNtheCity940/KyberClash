@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+
+# MCP Registry auth (created by mcp-publisher login – do not commit)
+.mcpregistry_github_token
+.mcpregistry_registry_token
+
+# Local GPG wrapper (optional, do not commit)
+gpg-wrapper.sh

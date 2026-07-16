@@ -1,0 +1,10 @@
+{
+  "Title": "Cloud City Duel Spires",
+  "Slug": "cloud_city_duel_spires",
+  "Prompt": "Super Smash Bros Ultimate style floating battle arena, elegant cloud city spires high above sunset clouds, central hovering landing pad, two mid-level balcony platforms and one upper bridge platform, open sides and bottom for knock-off eliminations, gold and white sci-fi architecture, readable side-view stage layout, clean cel-shaded game key art, no characters, no UI, high resolution 2048x2048.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/0192f66751d83197c1fd8aa370eaf02b.webp",
+  "GeneratedAtUtc": "2026-07-08T23:20:16.1567482Z",
+  "Files": {
+    "cloud_city_duel_spires_background": "Assets/_Project/Art/Stages/cloud_city_duel_spires/cloud_city_duel_spires_background.webp"
+  }
+}

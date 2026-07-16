@@ -1,0 +1,10 @@
+{
+  "Title": "Sith Foundry Crucible",
+  "Slug": "sith_foundry_crucible",
+  "Prompt": "Super Smash Bros Ultimate style floating battle arena, volcanic Sith foundry over a lava void, heavy central metal platform, two staggered side platforms and a narrow upper gantry, open blast-zone edges, red-orange forge glow, chains, molten vents, readable side-view platform fighting layout, clean cel-shaded game key art, no characters, no UI, high resolution 2048x2048.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/e36d9d1fb0034cc785eeef2ed95219da.webp",
+  "GeneratedAtUtc": "2026-07-08T23:20:06.7393586Z",
+  "Files": {
+    "sith_foundry_crucible_background": "Assets/_Project/Art/Stages/sith_foundry_crucible/sith_foundry_crucible_background.webp"
+  }
+}

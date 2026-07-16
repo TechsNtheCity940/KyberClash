@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: 57afff6e7ef13f24d975a933292681ac
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 349
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 698
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5218be4d52bb954b9da7d679de3430c
+      internalID: -782938854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_01
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 698
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c535b327e512cc47871c4b792d5a452
+      internalID: 1961809583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_02
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 698
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cb3e4373cefdf4daf67722451be0be
+      internalID: -870413837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_03
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 349
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34479dd2c8e3893418bc75336dd04653
+      internalID: -1734382016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_04
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 349
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4547c534c86de0f4bbf14816de512f75
+      internalID: -697869030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_05
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 349
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf2f61da5a34824293d53201a0ed090
+      internalID: -783714212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_06
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693ee321d174ddb4b8873ae0dd11a15b
+      internalID: -461068191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_07
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 0
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7645a04b306d2469df8b5715eb599c
+      internalID: -476478791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfectdeflection_form_soresu_frame_08
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 0
+        width: 357
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00be13efdc87fe44aa543775bffe5699
+      internalID: 1803312924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: eb7f6a2692b371c4582acec5eca7ef2d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      perfectdeflection_form_soresu_animation_spritesheet_00: -1144899270
+      perfectdeflection_form_soresu_animation_spritesheet_01: -898431798
+      perfectdeflection_form_soresu_animation_spritesheet_02: 1720210942
+      perfectdeflection_form_soresu_animation_spritesheet_03: 566883843
+      perfectdeflection_form_soresu_animation_spritesheet_04: -1969551667
+      perfectdeflection_form_soresu_animation_spritesheet_05: 1118612683
+      perfectdeflection_form_soresu_animation_spritesheet_06: -1122906580
+      perfectdeflection_form_soresu_animation_spritesheet_07: -989045454
+      perfectdeflection_form_soresu_animation_spritesheet_08: -2084598624
+      perfectdeflection_form_soresu_animation_spritesheet_09: -349207781
+      perfectdeflection_form_soresu_animation_spritesheet_10: 1614621591
+      perfectdeflection_form_soresu_animation_spritesheet_11: 218866585
+      perfectdeflection_form_soresu_animation_spritesheet_12: 829089190
+      perfectdeflection_form_soresu_animation_spritesheet_13: 1276168180
+      perfectdeflection_form_soresu_animation_spritesheet_14: 404903774
+      perfectdeflection_form_soresu_animation_spritesheet_15: -378000120
+      perfectdeflection_form_soresu_animation_spritesheet_16: -1975859535
+      perfectdeflection_form_soresu_animation_spritesheet_17: -553326650
+      perfectdeflection_form_soresu_animation_spritesheet_18: -64824710
+      perfectdeflection_form_soresu_animation_spritesheet_19: 1034232104
+      perfectdeflection_form_soresu_animation_spritesheet_20: 1755345181
+      perfectdeflection_form_soresu_animation_spritesheet_21: -154626892
+      perfectdeflection_form_soresu_animation_spritesheet_22: -1548430179
+      perfectdeflection_form_soresu_animation_spritesheet_23: 973721894
+      perfectdeflection_form_soresu_frame_00: -782938854
+      perfectdeflection_form_soresu_frame_01: 1961809583
+      perfectdeflection_form_soresu_frame_02: -870413837
+      perfectdeflection_form_soresu_frame_03: -1734382016
+      perfectdeflection_form_soresu_frame_04: -697869030
+      perfectdeflection_form_soresu_frame_05: -783714212
+      perfectdeflection_form_soresu_frame_06: -461068191
+      perfectdeflection_form_soresu_frame_07: -476478791
+      perfectdeflection_form_soresu_frame_08: 1803312924
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

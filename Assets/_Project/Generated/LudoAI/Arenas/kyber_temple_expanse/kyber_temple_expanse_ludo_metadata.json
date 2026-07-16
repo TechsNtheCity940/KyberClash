@@ -1,0 +1,10 @@
+{
+  "Title": "Kyber Temple Expanse",
+  "Slug": "kyber_temple_expanse",
+  "Prompt": "Super Smash Bros Ultimate style floating battle arena, ancient kyber crystal temple suspended above a glowing canyon, large central floating stone platform with two smaller mid-level side platforms and one high top platform, clear side-view fighting layout, open left and right edges for ring-out eliminations, luminous blue-white kyber crystals, clean cel-shaded game key art, bold readable shapes, no characters, no UI, high resolution 2048x2048.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/4851609feb5451bf097a51ab45537c42.webp",
+  "GeneratedAtUtc": "2026-07-08T23:19:56.7098868Z",
+  "Files": {
+    "kyber_temple_expanse_background": "Assets/_Project/Art/Stages/kyber_temple_expanse/kyber_temple_expanse_background.webp"
+  }
+}

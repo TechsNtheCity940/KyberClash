@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfc447fd721bc64f8304b5686be86be, type: 3}
+  m_Name: Form_Makashi
+  m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.FormSO
+  description: 
+  formId: makashi
+  displayName: 'Form II: Makashi'
+  loreDescription: The dueling form. Precision and economy of motion.
+  saberColor: {r: 0, g: 1, b: 0, a: 1}
+  saberCoreColor: {r: 1, g: 1, b: 1, a: 1}
+  saberGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  saberMaterial: {fileID: 0}
+  formVFXPrefab: {fileID: 0}
+  moveSpeedMultiplier: 1.1
+  airSpeedMultiplier: 1
+  jumpHeightMultiplier: 1
+  gravityMultiplier: 1
+  dashMultiplier: 1
+  maxAirJumps: 1
+  canAirDash: 1
+  airDashCooldown: 1
+  canWallJump: 0
+  damageMultiplier: 1
+  knockbackMultiplier: 1
+  attackSpeedMultiplier: 1.15
+  meterGainMultiplier: 1
+  meterCostMultiplier: 1
+  lightAttack: {fileID: 0}
+  heavyAttack: {fileID: 0}
+  upAerial: {fileID: 0}
+  downAerial: {fileID: 0}
+  forwardAerial: {fileID: 0}
+  backAerial: {fileID: 0}
+  neutralSpecial: {fileID: 0}
+  sideSpecial: {fileID: 0}
+  upSpecial: {fileID: 0}
+  downSpecial: {fileID: 0}
+  mechanicType: 2
+  mechanicData:
+    counterWindowFrames: 8
+    counterMeterGain: 10
+    counterAttack: {fileID: 0}
+    precisionWindowFrames: 3
+    riposteDamageMultiplier: 1.5
+    riposteKnockbackMultiplier: 1.3
+    canDeflectProjectiles: 1
+    deflectionAngle: 45
+    reflectedProjectileAttack: {fileID: 0}
+    comboWindowExtension: 0.2
+    maxAerialChains: 3
+    aerialMomentumPreservation: 0.8
+    counterAbsorbThreshold: 15
+    counterDamageBonus: 1.5
+    counterKnockbackBonus: 1.5
+    forcePushCooldown: 5
+    forcePushForce: 20
+    forcePullRange: 10
+    forcePullForce: 15
+    tranceMeterCostPerSecond: 10
+    tranceDamageBonus: 2
+    tranceSpeedBonus: 1.3
+    tranceArmorThreshold: 20
+  passiveMeterGain: 0
+  meterGainOnHit: 5
+  meterGainOnPerfectParry: 20

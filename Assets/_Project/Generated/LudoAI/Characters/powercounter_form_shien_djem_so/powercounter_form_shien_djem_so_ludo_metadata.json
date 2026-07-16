@@ -1,0 +1,15 @@
+{
+  "Title": "PowerCounter â€” Form Shien / Djem So (Power, counter-attacks, heavy hits)",
+  "Slug": "powercounter_form_shien_djem_so",
+  "Prompt": "Star Wars Jedi in Form Shien/Djem So power stance, two-handed heavy grip slamming the lightsaber downward, broad muscular build, grounded aggressive posture, intense determined expression, orange-amber kyber blade with thick glow, heavy reinforced armor plating over tunic in steel and bronze, clean cel-shaded Smash Bros Ultimate key art style, bold readable silhouette, vibrant flat shading, subtle rim light, transparent background. Sprite sheet: 6x4 grid showing idle, walk, jump, light chop, heavy overhead smash, power-counter absorb (blade bracing then releasing a shockwave), side special, up special, down special ground-pound, hit react, KO â€” evenly spaced cells, transparent background, consistent lighting and proportions, 2048x2048 game-ready.",
+  "ImageUrl": "https://storage.googleapis.com/ludo-assets/api/0cdd01e7843562ad24509eee70f29890.webp",
+  "AnimationSpritesheetUrl": "https://storage.googleapis.com/ludo-assets/api/d2026421242dee3ad1a54ff7e12adc6b.webp",
+  "AnimationGifUrl": null,
+  "AnimationVideoUrl": "https://storage.googleapis.com/ludo-assets/api/332ac67317821ad1c7d3ecb9084b798f.mp4",
+  "GeneratedAtUtc": "2026-07-08T22:46:10.2228845Z",
+  "Files": {
+    "powercounter_form_shien_djem_so_key_art": "Assets/_Project/Generated/LudoAI/Characters/powercounter_form_shien_djem_so/powercounter_form_shien_djem_so_key_art.webp",
+    "powercounter_form_shien_djem_so_animation_spritesheet": "Assets/_Project/Generated/LudoAI/Characters/powercounter_form_shien_djem_so/powercounter_form_shien_djem_so_animation_spritesheet.webp",
+    "powercounter_form_shien_djem_so_animation_video": "Assets/_Project/Generated/LudoAI/Characters/powercounter_form_shien_djem_so/powercounter_form_shien_djem_so_animation_video.mp4"
+  }
+}
