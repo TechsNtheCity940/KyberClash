@@ -15,10 +15,34 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: e541110631bdebe41aaac5eeb64b318e
   m_SerializeEntries:
+  - m_GUID: 129affdbbc71b574789fa0267ccadf2a
+    m_Address: Assets/_Project/Art/Characters/acrobaticflow_form_ataru/Sprites/acrobaticflow_form_ataru_Move.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a149991cc8351d469a2a04825f3ae89
+    m_Address: Packages/com.unity.asset-manager-for-unity/Embedded
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6ea5492f9afb5c14d9443668ee380ef6
     m_Address: Assets/_Project/Scenes/PrototypeArena.unity
     m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b483caff2aaeb76498ad5aa3217b3762
+    m_Address: Assets/_Project/Art/Characters/acrobaticflow_form_ataru/Sprites/acrobaticflow_form_ataru_animation_spritesheet.png
+    m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc6b9a0ddc7dfd4488da29ad8f2a1c62
+    m_Address: Assets/_Project/Art/Characters/acrobaticflow_form_ataru/Sprites/New
+      Animation.anim
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ebd3a0fcf9d3dd74e89de100fcf3f77c, type: 2}
@@ -26,6 +50,8 @@ MonoBehaviour:
     m_Schemas:
     - {fileID: 11400000, guid: a9594973a7dbfad4da1d70972d5805b9, type: 2}
     - {fileID: 11400000, guid: d689814b6abd8c24f9cad4978b264ae9, type: 2}
-    m_SchemaDisplayOrder: []
+    m_SchemaDisplayOrder:
+    - Default Local Group_BundledAssetGroupSchema
+    - Default Local Group_ContentUpdateGroupSchema
   m_IncludeInBuild: 1
   m_IncludeInBuildMigrated: 1
