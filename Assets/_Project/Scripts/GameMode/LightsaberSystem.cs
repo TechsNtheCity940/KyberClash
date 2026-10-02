@@ -102,9 +102,22 @@ public class LightsaberSystem : MonoBehaviour
 
     private void Update()
     {
+        // HIGH PRIORITY #1: Fix VFX null reference guards before blade generation
         if (_useAICombatReference)
-            
+        {
             _isCombatActive = true;
+            
+            // Guard for lightsaber object and color name safety
+            if (_lightsaberObject != null && !_bladeColorName.Contains("*"))
+            {
+                // Validate form SO exists before calling AI combat logic
+                if (!string.IsNullOrEmpty(_currentForm.ToString()) && _combatAbilities.Count > 0)
+                {
+                    var validAbilities = _combatAbilities.Where(ab => ab != null && !ab.color.Contains("*"));
+                    validAbilities.ForEach(ab => ab.color = this._bladeColorName);
+                }
+            }
+        }
     }
 
     // Exposed for GameFlowManager callback via OnGameModeReady and OnFighterAdded hooks
