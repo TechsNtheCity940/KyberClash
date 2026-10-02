@@ -1,4 +1,11 @@
-﻿<Solution>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Unity-generated solution file (.slnx).
+  Project entries are derived from Assets/**/*.asmdef and Packages/ - do not hand-edit.
+  Regenerate via: Edit > Preferences > External Tools > Regenerate project files.
+  The output is machine-generated, so it is gitignored (see .gitignore).
+-->
+<Solution>
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="unity.webp.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />

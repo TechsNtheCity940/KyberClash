@@ -24,6 +24,7 @@
 *.uss text eol=lf
 *.uxml text eol=lf
 *.json text eol=lf
+*.slnx text eol=lf
 *.txt text eol=lf
 *.md text eol=lf
 *.csv text eol=lf
