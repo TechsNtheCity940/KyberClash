@@ -18,7 +18,7 @@ MonoBehaviour:
   characterDescription: A balanced warrior of the Order. Mind the manure.
   characterPortrait: {fileID: 0}
   characterIcon: {fileID: 0}
-  animatorController: {fileID: 9100000, guid: de7291df301c7ff4f8a071359bb0fd1c, type: 2}
+  animatorController: {fileID: 0}
   baseMoveSpeed: 8
   baseAirSpeed: 6
   baseJumpHeight: 5
@@ -46,13 +46,14 @@ MonoBehaviour:
   defaultDownAerial: {fileID: 11400000, guid: 55d7b0ae7fad29540a506a2368c53353, type: 2}
   defaultForwardAerial: {fileID: 11400000, guid: b929a6d2f6a7a31418f06e474b6390b8, type: 2}
   defaultBackAerial: {fileID: 11400000, guid: b5c3669cddc9d6448a26e989acb5e2e4, type: 2}
-  defaultNeutralSpecial: {fileID: 11400000, guid: 0910551fa93e1454d970585f8cb4f61a, type: 2}
-  defaultSideSpecial: {fileID: 11400000, guid: 4235fc127f951374196151f7174b10ab, type: 2}
-  defaultUpSpecial: {fileID: 11400000, guid: 5d55deb3c9946b741899dc384e675d3c, type: 2}
-  defaultDownSpecial: {fileID: 11400000, guid: cad1052ae5923c4428178002042c1e52, type: 2}
+  defaultNeutralSpecial: {fileID: 11400000, guid: 6f814a82134e79946a00b4c0a983ecf9, type: 2}
+  defaultSideSpecial: {fileID: 11400000, guid: 7e21b8de4c9ca1045ab523e04068ee7a, type: 2}
+  defaultUpSpecial: {fileID: 11400000, guid: 595b35718e4083543a02f3ae865c46ee, type: 2}
+  defaultDownSpecial: {fileID: 11400000, guid: f917c79d88aadae4cb392a69c08c0485, type: 2}
   characterModelPrefab: {fileID: 3528774601344430082, guid: 79ce589aa83384643a6988e6986fa2de, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

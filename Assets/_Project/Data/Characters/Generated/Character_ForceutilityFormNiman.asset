@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Character_NeonMann
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
   description: 
-  characterId: neon_mann
-  displayName: Neon Mann
-  characterDescription: A little of everything, including attitude.
+  characterId: forceutility_form_niman
+  displayName: Forceutility Form Niman
+  characterDescription: Generated Ludo AI fighter art and animation set for Forceutility
+    Form Niman.
   characterPortrait: {fileID: 21300000, guid: 7c712f5ff1de44c41b1c8e5d7c4409c8, type: 3}
   characterIcon: {fileID: 21300000, guid: 7c712f5ff1de44c41b1c8e5d7c4409c8, type: 3}
   animatorController: {fileID: 9100000, guid: 0f2609f851f008f41b4810399ce50616, type: 2}
@@ -56,6 +57,7 @@ MonoBehaviour:
   characterModelPrefab: {fileID: 882708642802549271, guid: eb20d50e3fbf71e4383e1a37507abebe, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

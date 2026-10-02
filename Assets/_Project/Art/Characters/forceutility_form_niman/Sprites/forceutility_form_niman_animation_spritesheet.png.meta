@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -114,18 +127,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 634
-        width: 158
-        height: 212
+        y: 564
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 33128b9102196384281a50687b0229f7
+      spriteID: 33acf287000000000800000000000000
       internalID: 2016397875
       vertices: []
       indices: 
@@ -135,19 +148,19 @@ TextureImporter:
       name: forceutility_form_niman_animation_spritesheet_01
       rect:
         serializedVersion: 2
-        x: 158
-        y: 634
-        width: 158
-        height: 212
+        x: 316
+        y: 564
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9bf1dc22c098652478cb5fdfca8b7745
+      spriteID: ff5c2946000000000800000000000000
       internalID: 1687340543
       vertices: []
       indices: 
@@ -157,19 +170,19 @@ TextureImporter:
       name: forceutility_form_niman_animation_spritesheet_02
       rect:
         serializedVersion: 2
-        x: 316
-        y: 634
-        width: 158
-        height: 212
+        x: 632
+        y: 564
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b7488c2b91a5c1d4f921b10b32de85cc
+      spriteID: 33e00f2affffffff0800000000000000
       internalID: -1561326029
       vertices: []
       indices: 
@@ -179,19 +192,19 @@ TextureImporter:
       name: forceutility_form_niman_animation_spritesheet_03
       rect:
         serializedVersion: 2
-        x: 474
-        y: 634
-        width: 158
-        height: 212
+        x: 0
+        y: 282
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b39d98b6df2f1564085333d001da96a2
+      spriteID: ffca0618ffffffff0800000000000000
       internalID: -2124370689
       vertices: []
       indices: 
@@ -201,19 +214,19 @@ TextureImporter:
       name: forceutility_form_niman_animation_spritesheet_04
       rect:
         serializedVersion: 2
-        x: 632
-        y: 634
-        width: 158
-        height: 212
+        x: 316
+        y: 282
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4a2952e9bcdb41148931a50f874cc117
+      spriteID: f0fea12fffffffff0800000000000000
       internalID: -233115889
       vertices: []
       indices: 
@@ -223,19 +236,19 @@ TextureImporter:
       name: forceutility_form_niman_animation_spritesheet_05
       rect:
         serializedVersion: 2
-        x: 790
-        y: 634
-        width: 158
-        height: 212
+        x: 632
+        y: 282
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1828abc3ba8928b4dac089800c3b08b2
+      spriteID: d178d3f5000000000800000000000000
       internalID: 1597867805
       vertices: []
       indices: 
@@ -246,18 +259,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 423
-        width: 158
-        height: 211
+        y: 0
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e2aa68c07c541ea4a9f8b2e5b45caae3
+      spriteID: c1459608ffffffff0800000000000000
       internalID: -2140580836
       vertices: []
       indices: 
@@ -267,19 +280,19 @@ TextureImporter:
       name: forceutility_form_niman_animation_spritesheet_07
       rect:
         serializedVersion: 2
-        x: 158
-        y: 423
-        width: 158
-        height: 211
+        x: 316
+        y: 0
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 13f202aa5929989409fdaf00e794e3d8
+      spriteID: ce4e7e9dffffffff0800000000000000
       internalID: -639114004
       vertices: []
       indices: 
@@ -289,350 +302,20 @@ TextureImporter:
       name: forceutility_form_niman_animation_spritesheet_08
       rect:
         serializedVersion: 2
-        x: 316
-        y: 423
-        width: 158
-        height: 211
+        x: 632
+        y: 0
+        width: 316
+        height: 282
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d24362667a06aed42a1c420bdd7bd541
+      spriteID: cee4d1f3000000000800000000000000
       internalID: 1058885356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_09
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 423
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1485f4b3f0f86464ca4807bf5f063a35
-      internalID: -793463048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 423
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c7caab6c44a0524f9ee3452c78bf917
-      internalID: 2040532183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 790
-        y: 423
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ddded0381941a342afc9b72d54cb424
-      internalID: 1759776056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 211
-        width: 158
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c27335380ab81f4aa206fd8285e2f67
-      internalID: 1655578387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 211
-        width: 158
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 962c38ec9121aea4086cf8a8e2335ead
-      internalID: 2093005432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 211
-        width: 158
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04ef9a1f05ede20498eb0edb503d9749
-      internalID: -265040138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 211
-        width: 158
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3214b4a1d74a7634a80e0bdc5f944a29
-      internalID: -1770966253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_16
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 211
-        width: 158
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98642f32c0804ae4b9a462717885e569
-      internalID: -450053363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 790
-        y: 211
-        width: 158
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ae99c59bd9d64548a57eff4d405444d
-      internalID: 227618557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edce8cd21f39ab447a43c80436466df2
-      internalID: -995882727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 0
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afbf167b932cf2044871f0c821450e0c
-      internalID: -1936625101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 0
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6782a026d9bb06342bfafcee4b243e85
-      internalID: 1698065263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_21
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 0
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adc75f75a0d0f93448a4183e15780493
-      internalID: 2096553033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_22
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 0
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 279380abe00587248a78e319efc1f821
-      internalID: -2064979392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: forceutility_form_niman_animation_spritesheet_23
-      rect:
-        serializedVersion: 2
-        x: 790
-        y: 0
-        width: 158
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 242b33508ad1521458693b4495027793
-      internalID: 1690351688
       vertices: []
       indices: 
       edges: []

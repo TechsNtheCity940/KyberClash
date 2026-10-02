@@ -1,5 +1,6 @@
 using UnityEngine;
 using KyberKlash.Data;
+using KyberKlash.Combat;
 
 namespace KyberKlash.Player.States
 {
@@ -280,6 +281,14 @@ namespace KyberKlash.Player.States
             }
 
             StartAttack(GetAttackData(slot));
+        }
+
+        /// <summary>
+        /// Handle animation events from CombatAnimationEvents
+        /// </summary>
+        public virtual void OnAnimationEvent(CombatAnimationEvent evt)
+        {
+            // Override in derived states for specific handling
         }
     }
 }

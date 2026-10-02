@@ -68,7 +68,7 @@ namespace McpUnity.Resources
             if (int.TryParse(idOrName, out int instanceId))
             {
                 // Unity Instance IDs are typically negative, but we'll accept any integer
-                UnityEngine.Object unityObject = EditorUtility.EntityIdToObject(new EntityId { Value = (uint)(uint }instanceId));
+                UnityEngine.Object unityObject = EditorUtility.EntityIdToObject((EntityId)instanceId);
                 gameObject = unityObject as GameObject;
             }
             else
@@ -101,7 +101,7 @@ namespace McpUnity.Resources
                 ["success"] = true,
                 ["message"] = $"Retrieved GameObject data for '{gameObject.name}'",
                 ["gameObject"] = gameObjectData,
-                ["instanceId"] = gameObject.GetEntityId().Value
+                ["instanceId"] = gameObject.GetEntityId().GetRawData()
             };
         }
 
@@ -153,7 +153,7 @@ namespace McpUnity.Resources
                 ["tag"] = gameObject.tag,
                 ["layer"] = gameObject.layer,
                 ["layerName"] = LayerMask.LayerToName(gameObject.layer),
-                ["instanceId"] = gameObject.GetEntityId().Value
+                ["instanceId"] = gameObject.GetEntityId().GetRawData()
             };
 
             if (includeComponents)

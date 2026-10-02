@@ -100,7 +100,7 @@ namespace McpUnity.Tools
                     // Try to find parent by ID first
                     if (parentId.HasValue)
                     {
-                        parent = EditorUtility.EntityIdToObject(parentId.Value) as GameObject;
+                        parent = EditorUtility.EntityIdToObject((EntityId)parentId.Value) as GameObject;
                     }
                     // Otherwise try to find by path
                     else if (!string.IsNullOrEmpty(parentPath))
@@ -138,8 +138,8 @@ namespace McpUnity.Tools
             {
                 ["success"] = true,
                 ["type"] = "text",
-                ["message"] = $"Successfully added asset '{asset.name}' with instance ID {instance.GetEntityId().Value} to the scene",
-                ["instanceId"] = instance.GetEntityId().Value
+                ["message"] = $"Successfully added asset '{asset.name}' with instance ID {instance.GetEntityId().GetRawData()} to the scene",
+                ["instanceId"] = instance.GetEntityId().GetRawData()
             };
         }
     }

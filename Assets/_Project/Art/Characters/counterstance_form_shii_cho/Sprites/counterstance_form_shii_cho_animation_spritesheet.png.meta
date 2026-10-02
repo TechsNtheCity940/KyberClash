@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -114,18 +127,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 713
-        width: 192
-        height: 238
+        y: 634
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dad0ec9bf9f849a45ac2491381e2c67f
+      spriteID: 6ae8bc0effffffff0800000000000000
       internalID: -523530586
       vertices: []
       indices: 
@@ -135,19 +148,19 @@ TextureImporter:
       name: counterstance_form_shii_cho_animation_spritesheet_01
       rect:
         serializedVersion: 2
-        x: 192
-        y: 713
-        width: 193
-        height: 238
+        x: 385
+        y: 634
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 35ba17cbce11c0c41855d3a9a32ef1fc
+      spriteID: 0ffaa10effffffff0800000000000000
       internalID: -535121936
       vertices: []
       indices: 
@@ -157,19 +170,19 @@ TextureImporter:
       name: counterstance_form_shii_cho_animation_spritesheet_02
       rect:
         serializedVersion: 2
-        x: 385
-        y: 713
-        width: 192
-        height: 238
+        x: 770
+        y: 634
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1ed470e0bda9ecb46aee3b02dccd070f
+      spriteID: 200853d3000000000800000000000000
       internalID: 1026916354
       vertices: []
       indices: 
@@ -179,19 +192,19 @@ TextureImporter:
       name: counterstance_form_shii_cho_animation_spritesheet_03
       rect:
         serializedVersion: 2
-        x: 577
-        y: 713
-        width: 193
-        height: 238
+        x: 0
+        y: 317
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 651c4faf253556c47b0e416e9d650b17
+      spriteID: 5103c85dffffffff0800000000000000
       internalID: -712232939
       vertices: []
       indices: 
@@ -201,19 +214,19 @@ TextureImporter:
       name: counterstance_form_shii_cho_animation_spritesheet_04
       rect:
         serializedVersion: 2
-        x: 770
-        y: 713
-        width: 192
-        height: 238
+        x: 385
+        y: 317
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b0925f2670a13e848b5b7385862319d7
+      spriteID: e9853b2fffffffff0800000000000000
       internalID: -223127394
       vertices: []
       indices: 
@@ -223,19 +236,19 @@ TextureImporter:
       name: counterstance_form_shii_cho_animation_spritesheet_05
       rect:
         serializedVersion: 2
-        x: 962
-        y: 713
-        width: 193
-        height: 238
+        x: 770
+        y: 317
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 978f99303d104a24b82c9e7674e3dda0
+      spriteID: 2ce1e6a0000000000800000000000000
       internalID: 174988994
       vertices: []
       indices: 
@@ -246,18 +259,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 475
-        width: 192
-        height: 238
+        y: 0
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 81c698c7784338345a07cea4ef834d00
+      spriteID: dfff76a4000000000800000000000000
       internalID: 1248329725
       vertices: []
       indices: 
@@ -267,19 +280,19 @@ TextureImporter:
       name: counterstance_form_shii_cho_animation_spritesheet_07
       rect:
         serializedVersion: 2
-        x: 192
-        y: 475
-        width: 193
-        height: 238
+        x: 385
+        y: 0
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c94a92c383ea040408ac9b584ae660af
+      spriteID: b93a45d1000000000800000000000000
       internalID: 492086171
       vertices: []
       indices: 
@@ -289,350 +302,20 @@ TextureImporter:
       name: counterstance_form_shii_cho_animation_spritesheet_08
       rect:
         serializedVersion: 2
-        x: 385
-        y: 475
-        width: 192
-        height: 238
+        x: 770
+        y: 0
+        width: 385
+        height: 317
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ac98aead54075de4fb39fa63989fae90
+      spriteID: 443dbe6bffffffff0800000000000000
       internalID: -1226058940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_09
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 475
-        width: 193
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fa446b3f97ba5e4e82685ce9e9e7203
-      internalID: -964379202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 475
-        width: 192
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 990195980986d2448bc936844be804a5
-      internalID: -421296466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 962
-        y: 475
-        width: 193
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cb572209256e1747ad900ffef7f671a
-      internalID: -254319699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 237
-        width: 192
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79bc6fb902a9ce141a8e23751a11a0c1
-      internalID: 1346581022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 237
-        width: 193
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00815a42b9bfebd4bb02338195a39d86
-      internalID: -1260585098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 385
-        y: 237
-        width: 192
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f95514c015543347bef88fb3a2633f0
-      internalID: -517834799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 237
-        width: 193
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a6a94d8b35e5234eb942b5b7332cc18
-      internalID: -1784236588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_16
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 237
-        width: 192
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d30f4b24f39aee4ea887fddbedb08c7
-      internalID: -1908127918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 962
-        y: 237
-        width: 193
-        height: 238
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 792f79cfe9cbfbb4b8365830c37f93c2
-      internalID: 1584490941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 192
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31411203fd770614e94ce42c2b7ebf1f
-      internalID: 495954307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 193
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b87e5ae62300daf4eb98af87d0a83e3a
-      internalID: 332298917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 385
-        y: 0
-        width: 192
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61dc52be4ca270b4a90b3c8727b57976
-      internalID: -574926740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_21
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 0
-        width: 193
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c28a71d89f967764f8362c7034acf63f
-      internalID: 1817315869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_22
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 0
-        width: 192
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1fbc8ec324b68b8449a75b104bf76d07
-      internalID: 1834589523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: counterstance_form_shii_cho_animation_spritesheet_23
-      rect:
-        serializedVersion: 2
-        x: 962
-        y: 0
-        width: 193
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a727d4cb2025e146a59c9a1fdbbfd07
-      internalID: 643340268
       vertices: []
       indices: 
       edges: []

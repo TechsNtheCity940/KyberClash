@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 325
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,11 +106,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_00
+      name: precisionparry_form_makashi_animation_spritesheet_00
       rect:
         serializedVersion: 2
         x: 0
@@ -123,16 +136,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e3cd2483d9077c7498d7eb9632800b7c
-      internalID: 548212445
+      spriteID: 5f0a51a7000000000800000000000000
+      internalID: 2048237813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_01
+      name: precisionparry_form_makashi_animation_spritesheet_01
       rect:
         serializedVersion: 2
         x: 440
@@ -145,16 +158,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 99eb963da057b874fa92816956b07a28
-      internalID: 963566169
+      spriteID: 65e4f3a2000000000800000000000000
+      internalID: 708791894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_02
+      name: precisionparry_form_makashi_animation_spritesheet_02
       rect:
         serializedVersion: 2
         x: 880
@@ -167,16 +180,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9ac6600eff5c9cf45bffea7757bd8ea9
-      internalID: -835624034
+      spriteID: 89424f04000000000800000000000000
+      internalID: 1089741976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_03
+      name: precisionparry_form_makashi_animation_spritesheet_03
       rect:
         serializedVersion: 2
         x: 0
@@ -189,16 +202,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c567ba3e000d68941a8988011dad7dd9
-      internalID: -178956248
+      spriteID: f2b8e682000000000800000000000000
+      internalID: 678333231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_04
+      name: precisionparry_form_makashi_animation_spritesheet_04
       rect:
         serializedVersion: 2
         x: 440
@@ -211,16 +224,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f0754ec9be9e0614eaa49c8b8df59ab0
-      internalID: 1775288374
+      spriteID: dbfb3196000000000800000000000000
+      internalID: 1762901949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_05
+      name: precisionparry_form_makashi_animation_spritesheet_05
       rect:
         serializedVersion: 2
         x: 880
@@ -233,16 +246,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 422ea12add0e5c44ab4d1646b33a7bc5
-      internalID: 2117157816
+      spriteID: 4b5ed9d9ffffffff0800000000000000
+      internalID: -1650596428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_06
+      name: precisionparry_form_makashi_animation_spritesheet_06
       rect:
         serializedVersion: 2
         x: 0
@@ -255,16 +268,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f89a7ca220f109b42829c48e39a3023c
-      internalID: 323556752
+      spriteID: 8294086bffffffff0800000000000000
+      internalID: -1233106648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_07
+      name: precisionparry_form_makashi_animation_spritesheet_07
       rect:
         serializedVersion: 2
         x: 440
@@ -277,16 +290,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d89b52becf651594bb2e7bdac0656ec6
-      internalID: -659439506
+      spriteID: b5295690000000000800000000000000
+      internalID: 157651547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: precisionparry_form_makashi_frame_08
+      name: precisionparry_form_makashi_animation_spritesheet_08
       rect:
         serializedVersion: 2
         x: 880
@@ -299,10 +312,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ce4e82eec3a269546bb514b9ee40178f
-      internalID: 1190517008
+      spriteID: 4995e601000000000800000000000000
+      internalID: 275667348
       vertices: []
       indices: 
       edges: []

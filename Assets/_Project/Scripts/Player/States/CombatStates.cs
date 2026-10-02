@@ -1,5 +1,6 @@
 using UnityEngine;
 using KyberKlash.Data;
+using KyberKlash.Combat;
 
 namespace KyberKlash.Player.States
 {
@@ -185,6 +186,13 @@ namespace KyberKlash.Player.States
         public void OnHitConnected(DamageInfo damageInfo)
         {
             hitsDealt++;
+            
+            // Track aerial attacks for AcrobaticFlow
+            if (!isGrounded)
+            {
+                var mechanicHandler = player.GetComponent<FormMechanicHandler>();
+                mechanicHandler?.RegisterAerialAttack();
+            }
 
             // Grant meter
             float meterGain = currentAttack.meterGainOnHit * currentForm.meterGainMultiplier;
@@ -194,31 +202,27 @@ namespace KyberKlash.Player.States
             }
             meter.GainMeter(meterGain);
 
-            // Hit pause
+            // Play hit SFX
+            if (currentAttack.hitSFX != null)
+            {
+                player.PlaySound(currentAttack.hitSFX.name);
+            }
+            else
+            {
+                player.PlaySound("Hit"); // Fallback
+            }
+
+            // Hit pause using HitPauseSystem
             if (currentAttack.hitPauseFrames > 0)
             {
-                player.StartCoroutine(HitPauseRoutine(currentAttack.hitPauseFrames));
+                HitPauseSystem.Instance?.RequestHitPause(currentAttack.hitPauseFrames);
             }
 
             // Screen shake
             player.ScreenShake(currentAttack.hitPauseFrames * 0.02f, 0.3f);
         }
 
-        private System.Collections.IEnumerator HitPauseRoutine(int frames)
-        {
-            float originalTimeScale = Time.timeScale;
-            Time.timeScale = 0.01f;
-
-            float pauseTime = frames / 60f;
-            float timer = 0f;
-            while (timer < pauseTime)
-            {
-                timer += Time.unscaledDeltaTime;
-                yield return null;
-            }
-
-            Time.timeScale = originalTimeScale;
-        }
+        // Remove the old HitPauseRoutine
     }
 
     /// <summary>

@@ -51,8 +51,13 @@ MonoBehaviour:
   randomizeStage: 1
   playerPrefab: {fileID: 2073491718320609073, guid: 33277311e2700334b9c57d097fce00f5, type: 3}
   availableCharacters:
-  - {fileID: 11400000, guid: 2dbb17f67ded6ff439be7857eca482d3, type: 2}
-  - {fileID: 11400000, guid: c729986ce78d29545992401bbd8b6961, type: 2}
+  - {fileID: 11400000, guid: 3326932f061da2b479568b512a872a47, type: 2}
+  - {fileID: 11400000, guid: aca1d61837da87849a483f6391f775a8, type: 2}
+  - {fileID: 11400000, guid: e6f7c5d46c9da5e4785356728e7b0797, type: 2}
+  - {fileID: 11400000, guid: 6632ff2e952aed64babb354527f694d5, type: 2}
+  - {fileID: 11400000, guid: 5d0bb930f5ce356439e8eeab6a3b916b, type: 2}
+  - {fileID: 11400000, guid: 0f90954222f68fe4ea1261aa389dd40d, type: 2}
+  - {fileID: 11400000, guid: 488a3204ade1da249a13b03bb50e27a7, type: 2}
   availableStages:
   - {fileID: 11400000, guid: 5108858b0629aa04bae5848265e0f1b3, type: 2}
   - {fileID: 11400000, guid: 6bb907c798b756c4cabb40da6a5f4175, type: 2}

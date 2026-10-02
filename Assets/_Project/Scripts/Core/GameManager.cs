@@ -25,21 +25,36 @@ namespace KyberKlash.Core
         [SerializeField] private StageData[] availableStages;
         [SerializeField] private StageData testStage;
 
+        [Header("CPU Opponents")]
+        [Tooltip("Index 0 = Player 1, 1 = Player 2. When true that slot is driven by AIBrain. Defaults to P2 = CPU so a solo human still gets a real match.")]
+        [SerializeField] private bool[] cpuPlayers = new bool[2] { false, true };
+        [SerializeField] [Range(0f, 1f)] private float cpuAggression = 0.7f;
+        [SerializeField] [Range(0.02f, 0.4f)] private float cpuReactionTime = 0.12f;
+        [SerializeField] [Range(0f, 1f)] private float cpuDefendChance = 0.6f;
+
         // State
         private PlayerController[] players;
         private float matchTimer;
         private bool matchActive = false;
         private int playersRemaining;
+        private bool isPaused = false;
+        private PlayerController matchWinner;
+        private int eliminationOrder; // increments each elimination for placement
 
         public static GameManager Instance { get; private set; }
         public CharacterData[] AvailableCharacters => availableCharacters;
         public StageData[] AvailableStages => availableStages;
         public StageData CurrentConfiguredStage => testStage;
+        public bool IsMatchActive => matchActive;
+        public bool IsPaused => isPaused;
+        public PlayerController MatchWinner => matchWinner;
 
         public event System.Action<PlayerController> OnPlayerEliminated;
         public event System.Action<PlayerController> OnPlayerWon;
         public event System.Action OnMatchStart;
         public event System.Action OnMatchEnd;
+        /// <summary>Raised once a winner is decided (stocks or time limit).</summary>
+        public event System.Action<PlayerController> OnMatchResolved;
 
         protected virtual void Awake()
         {
@@ -83,7 +98,30 @@ namespace KyberKlash.Core
                 matchTimer -= Time.deltaTime;
                 if (matchTimer <= 0f)
                 {
-                    EndMatch();
+                    // Time up: the survivor with the LOWEST damage percent wins
+                    // (Smash convention). A tie on equal damage is a draw.
+                    PlayerController best = null;
+                    float bestPercent = float.MaxValue;
+                    bool tie = false;
+                    if (players != null)
+                    {
+                        foreach (var p in players)
+                        {
+                            if (p == null || p.IsEliminated) continue;
+                            float pct = p.DamagePercent;
+                            if (pct < bestPercent - 0.01f)
+                            {
+                                bestPercent = pct;
+                                best = p;
+                                tie = false;
+                            }
+                            else if (Mathf.Abs(pct - bestPercent) <= 0.01f && p != best)
+                            {
+                                tie = true;
+                            }
+                        }
+                    }
+                    ResolveMatch(tie ? null : best, tie ? MatchEndReason.Draw : MatchEndReason.TimeLimit);
                 }
             }
         }
@@ -120,10 +158,11 @@ namespace KyberKlash.Core
             // Find spawn points
             Transform[] spawnPoints = StageManager.Instance?.GetSpawnPoints() ?? new Transform[0];
 
-            // For testing, create 2 players
             int playerCount = Mathf.Min(2, availableCharacters.Length);
             players = new PlayerController[playerCount];
             playersRemaining = playerCount;
+            eliminationOrder = 0;
+            matchWinner = null;
 
             // Safe spawn height: just above the main platform so fighters drop in instead
             // of spawning inside/under it or already past the blast zone.
@@ -146,6 +185,7 @@ namespace KyberKlash.Core
                 if (controller != null)
                 {
                     controller.InitializeCharacter(availableCharacters[i]);
+                    controller.InitializeMatchState(stocksPerPlayer, i);
                     controller.SetSpawnPoint(spawnPos);
 
                     // Setup input for local multiplayer
@@ -155,8 +195,26 @@ namespace KyberKlash.Core
                         inputHandler.SetPlayerIndex(i);
                     }
 
+                    // CPU opponent: enable the AI brain for this slot when configured.
+                    bool isCpu = cpuPlayers != null && cpuPlayers.Length > i && cpuPlayers[i];
+                    var ai = controller.GetComponent<AIBrain>();
+                    if (isCpu)
+                    {
+                        if (ai == null) ai = controller.gameObject.AddComponent<AIBrain>();
+                        ai.Configure(cpuAggression, cpuReactionTime, cpuDefendChance);
+                        ai.enabled = true;
+                    }
+                    else if (ai != null)
+                    {
+                        ai.enabled = false;
+                    }
+
                     controller.OnDeathEvent += () => OnPlayerDeath(controller);
                     controller.OnRespawnEvent += () => OnPlayerRespawn(controller);
+                    // Stock-based elimination: a confirmed KO consumes a stock; when the
+                    // last stock is gone the fighter is eliminated and the match resolves.
+                    controller.OnStockLost += (remaining) => OnPlayerStockLost(controller, remaining);
+                    controller.OnEliminated += () => OnPlayerEliminatedHandler(controller);
 
                     players[i] = controller;
                 }
@@ -231,39 +289,137 @@ namespace KyberKlash.Core
 
         private void OnPlayerDeath(PlayerController player)
         {
-            OnPlayerEliminated?.Invoke(player);
+            // A ring-out/KO costs the player one stock. The match manager (not the HUD) owns
+            // the stock count, so the HUD simply reflects whatever the controller reports.
+            player.RegisterStockLoss();
         }
 
         private void OnPlayerRespawn(PlayerController player)
         {
-            // Player respawned with invulnerability
+            // Player respawned with invulnerability; nothing else to do here.
         }
 
-        private void EndMatch()
+        private void OnPlayerStockLost(PlayerController player, int remaining)
         {
-            matchActive = false;
-            OnMatchEnd?.Invoke();
+            Debug.Log($"[GameManager] {player.name} lost a stock. {remaining} remaining.", this);
+            if (remaining > 0)
+            {
+                OnPlayerEliminated?.Invoke(player);
+            }
+        }
 
-            // Show results, return to menu, etc.
-            Debug.Log("[GameManager] Match ended!");
+        private void OnPlayerEliminatedHandler(PlayerController player)
+        {
+            Debug.Log($"[GameManager] {player.name} has been eliminated!", this);
+            OnPlayerEliminated?.Invoke(player);
+
+            playersRemaining = Mathf.Max(0, playersRemaining - 1);
+
+            // Last fighter standing wins immediately (does not apply to time-limit draws).
+            if (matchActive && playersRemaining <= 1)
+            {
+                PlayerController survivor = GetLastLivingPlayer();
+                ResolveMatch(survivor, MatchEndReason.LastFighterStanding);
+            }
+        }
+
+        private PlayerController GetLastLivingPlayer()
+        {
+            if (players == null) return null;
+            PlayerController alive = null;
+            foreach (var p in players)
+            {
+                if (p != null && !p.IsEliminated)
+                {
+                    if (alive == null) alive = p;
+                    else return null; // more than one still alive
+                }
+            }
+            return alive;
+        }
+
+        /// <summary>Why the match ended - drives the results screen copy.</summary>
+        public enum MatchEndReason { LastFighterStanding, TimeLimit, Draw }
+
+        public MatchEndReason LastEndReason { get; private set; }
+
+        private void EndMatch(MatchEndReason reason = MatchEndReason.LastFighterStanding)
+        {
+            if (!matchActive) return;
+            matchActive = false;
+            LastEndReason = reason;
+            OnMatchEnd?.Invoke();
+            Debug.Log($"[GameManager] Match ended ({reason}).", this);
+        }
+
+        private void ResolveMatch(PlayerController winner, MatchEndReason reason)
+        {
+            if (!matchActive && matchWinner != null) return;
+
+            EndMatch(reason);
+            matchWinner = winner;
+            if (winner != null)
+            {
+                OnPlayerWon?.Invoke(winner);
+            }
+            OnMatchResolved?.Invoke(winner);
+            GameAudioManager.Instance?.PlaySfx(winner != null ? "match_win" : "match_draw");
+        }
+
+        /// <summary>Toggle pause. Returns the new paused state.</summary>
+        public bool TogglePause()
+        {
+            if (!matchActive) return isPaused;
+            SetPaused(!isPaused);
+            return isPaused;
+        }
+
+        public void SetPaused(bool paused)
+        {
+            if (isPaused == paused) return;
+            isPaused = paused;
+            Time.timeScale = paused ? 0f : 1f;
+            // Pause/resume the match music so the silence reads as "paused".
+            if (paused) GameAudioManager.Instance?.PlaySfx("ui_confirm");
         }
 
         /// <summary>
-        /// Restart current match
+        /// Restart the current match immediately (rematch / pause-menu restart).
+        /// Reuses the already-configured characters + stage so no scene reload is needed.
         /// </summary>
         public void RestartMatch()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+            isPaused = false;
+
+            // Clear any existing player instances so stock state resets cleanly.
+            if (players != null)
+            {
+                foreach (var p in players)
+                {
+                    if (p != null) Destroy(p.gameObject);
+                }
+            }
+            players = null;
+            matchWinner = null;
+            playersRemaining = 0;
+            eliminationOrder = 0;
+
+            StartMatch();
         }
 
         /// <summary>
-        /// Return to main menu
+        /// Return to the title screen flow (managed by GameFlowManager).
         /// </summary>
         public void ReturnToMenu()
         {
-            // No dedicated menu scene exists yet; reload the prototype arena instead of
-            // referencing a "MainMenu" scene that would throw at runtime.
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "PrototypeArena")
+            Time.timeScale = 1f;
+            isPaused = false;
+            if (GameFlowManager.Instance != null)
+            {
+                GameFlowManager.Instance.ShowStartScreenPublic();
+            }
+            else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "PrototypeArena")
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("PrototypeArena");
             }

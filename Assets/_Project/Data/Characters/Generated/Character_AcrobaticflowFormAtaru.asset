@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Character_AtA_Rush
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
   description: 
-  characterId: at_a_rush
-  displayName: At-A-Rush
-  characterDescription: Flailing violently, mostly upward.
+  characterId: acrobaticflow_form_ataru
+  displayName: Acrobaticflow Form Ataru
+  characterDescription: Generated Ludo AI fighter art and animation set for Acrobaticflow
+    Form Ataru.
   characterPortrait: {fileID: 21300000, guid: 95d76f1e973df4047b84f9b01ac18159, type: 3}
   characterIcon: {fileID: 21300000, guid: 95d76f1e973df4047b84f9b01ac18159, type: 3}
   animatorController: {fileID: 9100000, guid: 92c7444b06104ad49a94ada778418131, type: 2}
@@ -56,6 +57,7 @@ MonoBehaviour:
   characterModelPrefab: {fileID: 3915948621101195531, guid: 59fa3b897358b0042b2174ecaa8affab, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

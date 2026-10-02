@@ -18,7 +18,7 @@ MonoBehaviour:
   characterDescription: Power through passion, victory through strength. XOXO.
   characterPortrait: {fileID: 0}
   characterIcon: {fileID: 0}
-  animatorController: {fileID: 9100000, guid: 23fd38abaa0d26346912b8d8f64bd378, type: 2}
+  animatorController: {fileID: 0}
   baseMoveSpeed: 7
   baseAirSpeed: 5
   baseJumpHeight: 4.5
@@ -34,24 +34,26 @@ MonoBehaviour:
   weightClass: 3
   fallSpeedMultiplier: 1
   fastFallMultiplier: 2
-  defaultForm: {fileID: 11400000, guid: 4aa15808d76eced4cbb62512ca74450e, type: 2}
+  defaultForm: {fileID: 11400000, guid: 792f78c7b2be95540bfa07338c5cf72c, type: 2}
   availableForms:
+  - {fileID: 11400000, guid: 792f78c7b2be95540bfa07338c5cf72c, type: 2}
+  - {fileID: 11400000, guid: 97123db069fe55c488220b7ba91053fe, type: 2}
   - {fileID: 11400000, guid: 4aa15808d76eced4cbb62512ca74450e, type: 2}
-  - {fileID: 11400000, guid: 061009d4814a0ab47b73f795a95f0d26, type: 2}
-  - {fileID: 11400000, guid: 17e12173b72860145af4d0f5fdef490e, type: 2}
+  - {fileID: 11400000, guid: a3741d60623016b49bf88dbb17f47c3f, type: 2}
   defaultLightAttack: {fileID: 11400000, guid: 90842d7d7bd36a64eb035440781bfa2b, type: 2}
   defaultHeavyAttack: {fileID: 11400000, guid: 607cc23b87c5a9945a2cdb4416cddce7, type: 2}
   defaultUpAerial: {fileID: 11400000, guid: 5de8ca46c7668164e8266802056e2baa, type: 2}
   defaultDownAerial: {fileID: 11400000, guid: 55d7b0ae7fad29540a506a2368c53353, type: 2}
   defaultForwardAerial: {fileID: 11400000, guid: b929a6d2f6a7a31418f06e474b6390b8, type: 2}
   defaultBackAerial: {fileID: 11400000, guid: b5c3669cddc9d6448a26e989acb5e2e4, type: 2}
-  defaultNeutralSpecial: {fileID: 11400000, guid: d2a1b6b562b485b4ebcdeb0d003f34fe, type: 2}
-  defaultSideSpecial: {fileID: 11400000, guid: d9c11303abe29294d9035c92cd78bf01, type: 2}
-  defaultUpSpecial: {fileID: 11400000, guid: f5a9b951b590064479e2643e1dcead8e, type: 2}
-  defaultDownSpecial: {fileID: 11400000, guid: fd05f024a29ecb64092a0fb756c94966, type: 2}
+  defaultNeutralSpecial: {fileID: 11400000, guid: 1490e2c108ef7df40ab17d1afeea7217, type: 2}
+  defaultSideSpecial: {fileID: 11400000, guid: 4d48e399f7b87364694593589e61ff1b, type: 2}
+  defaultUpSpecial: {fileID: 11400000, guid: 0462da750bbb35d44894a65dba1f652e, type: 2}
+  defaultDownSpecial: {fileID: 11400000, guid: 3ce938ff26a543341a440b6c7e3cb6e1, type: 2}
   characterModelPrefab: {fileID: 8586914383057406125, guid: 57822f2b30278ef4ba2efa8c7e294a5b, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

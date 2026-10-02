@@ -34,14 +34,17 @@ namespace KyberKlash.Core
 
         protected virtual void Update()
         {
-            // Restart with R key
+            if (GameManager.Instance == null) return;
+
+            // Quick restart with R (rematch / restart current match).
             if (Input.GetKeyDown(KeyCode.R))
             {
-                GameManager.Instance?.RestartMatch();
+                GameManager.Instance.RestartMatch();
             }
 
-            // Quit with Escape
-            if (Input.GetKeyDown(KeyCode.Escape))
+            // Escape is now owned by GameFlowManager (pause overlay). If no match is
+            // active, fall back to quitting so the editor/standalone session still exits.
+            if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.IsMatchActive)
             {
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;

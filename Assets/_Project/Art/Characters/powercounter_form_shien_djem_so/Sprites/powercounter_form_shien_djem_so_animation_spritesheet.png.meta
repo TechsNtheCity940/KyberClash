@@ -3,7 +3,34 @@ guid: a4afbec493d609c4bbb2d2b670aa0f66
 labels:
 - UnityAI
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2687607261752696124
+    second: powercounter_form_shien_djem_so_animation_spritesheet_00
+  - first:
+      213: -3655033455412304079
+    second: powercounter_form_shien_djem_so_animation_spritesheet_01
+  - first:
+      213: 5593355739863058275
+    second: powercounter_form_shien_djem_so_animation_spritesheet_02
+  - first:
+      213: -6446712248447210610
+    second: powercounter_form_shien_djem_so_animation_spritesheet_03
+  - first:
+      213: -4060565152487162504
+    second: powercounter_form_shien_djem_so_animation_spritesheet_04
+  - first:
+      213: -6088496194220591089
+    second: powercounter_form_shien_djem_so_animation_spritesheet_05
+  - first:
+      213: -3815287940026658850
+    second: powercounter_form_shien_djem_so_animation_spritesheet_06
+  - first:
+      213: 7371320514463471074
+    second: powercounter_form_shien_djem_so_animation_spritesheet_07
+  - first:
+      213: -2721804028592544643
+    second: powercounter_form_shien_djem_so_animation_spritesheet_08
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -36,7 +63,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -50,7 +77,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 341
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -74,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,203 +135,216 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_00
+      name: powercounter_form_shien_djem_so_animation_spritesheet_00
       rect:
         serializedVersion: 2
         x: 0
-        y: 683
-        width: 341
-        height: 341
+        y: 810
+        width: 405
+        height: 405
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a5ca8caf8ed5ae3459bbdc8002391c8d
-      internalID: 1787882455917512259
+      spriteID: c3d9784a09c4c4520800000000000000
+      internalID: 2687607261752696124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_01
+      name: powercounter_form_shien_djem_so_animation_spritesheet_01
       rect:
         serializedVersion: 2
-        x: 341
-        y: 683
-        width: 341
-        height: 341
+        x: 405
+        y: 810
+        width: 405
+        height: 405
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f7568a86e6222bb4ab048a3709b6f0ff
-      internalID: -6364630102054677573
+      spriteID: 1372bffff66b64dc0800000000000000
+      internalID: -3655033455412304079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_02
+      name: powercounter_form_shien_djem_so_animation_spritesheet_02
       rect:
         serializedVersion: 2
-        x: 682
-        y: 683
-        width: 341
-        height: 341
+        x: 810
+        y: 810
+        width: 405
+        height: 405
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 069889507f329da4c9f1b6a99d46e74e
-      internalID: -8551897430373054922
+      spriteID: 3670ee819679f9d40800000000000000
+      internalID: 5593355739863058275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_03
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 342
-        width: 341
-        height: 341
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59f651dd470af91439b951db4b5b6ee8
-      internalID: 4208667773763692421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_04
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 342
-        width: 341
-        height: 341
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bab327c9f93a1504dbd31419617b9a62
-      internalID: 4797537838006171233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_05
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 342
-        width: 341
-        height: 341
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbbc4de30c7005e4483f4d9315803529
-      internalID: -8610626233592335383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_06
+      name: powercounter_form_shien_djem_so_animation_spritesheet_03
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 341
-        height: 341
+        y: 405
+        width: 405
+        height: 405
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 23b8820aabe425544bbc9942d80d0847
-      internalID: -9016404252926263332
+      spriteID: e8be42ebd5da886a0800000000000000
+      internalID: -6446712248447210610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_07
+      name: powercounter_form_shien_djem_so_animation_spritesheet_04
       rect:
         serializedVersion: 2
-        x: 341
-        y: 1
-        width: 341
-        height: 341
+        x: 405
+        y: 405
+        width: 405
+        height: 405
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4631490ae35791e428e78e6082872582
-      internalID: -7890324129895747464
+      spriteID: 87d3ca2f189f5a7c0800000000000000
+      internalID: -4060565152487162504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powercounter_form_shien_djem_so_frame_08
+      name: powercounter_form_shien_djem_so_animation_spritesheet_05
       rect:
         serializedVersion: 2
-        x: 682
-        y: 1
-        width: 341
-        height: 341
+        x: 810
+        y: 405
+        width: 405
+        height: 405
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b1db87446be0216479a9873acdfceb23
-      internalID: 7287142317946853652
+      spriteID: f08f92738f0518ba0800000000000000
+      internalID: -6088496194220591089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powercounter_form_shien_djem_so_animation_spritesheet_06
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 405
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf01e235df5d0bc0800000000000000
+      internalID: -3815287940026658850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powercounter_form_shien_djem_so_animation_spritesheet_07
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 405
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e51526f3f03c4660800000000000000
+      internalID: 7371320514463471074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powercounter_form_shien_djem_so_animation_spritesheet_08
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 405
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74a38f18a53a3ad0800000000000000
+      internalID: -2721804028592544643
       vertices: []
       indices: 
       edges: []
@@ -323,6 +363,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      powercounter_form_shien_djem_so_animation_spritesheet_00: 2687607261752696124
+      powercounter_form_shien_djem_so_animation_spritesheet_01: -3655033455412304079
+      powercounter_form_shien_djem_so_animation_spritesheet_02: 5593355739863058275
+      powercounter_form_shien_djem_so_animation_spritesheet_03: -6446712248447210610
+      powercounter_form_shien_djem_so_animation_spritesheet_04: -4060565152487162504
+      powercounter_form_shien_djem_so_animation_spritesheet_05: -6088496194220591089
+      powercounter_form_shien_djem_so_animation_spritesheet_06: -3815287940026658850
+      powercounter_form_shien_djem_so_animation_spritesheet_07: 7371320514463471074
+      powercounter_form_shien_djem_so_animation_spritesheet_08: -2721804028592544643
       powercounter_form_shien_djem_so_frame_00: 1787882455917512259
       powercounter_form_shien_djem_so_frame_01: -6364630102054677573
       powercounter_form_shien_djem_so_frame_02: -8551897430373054922

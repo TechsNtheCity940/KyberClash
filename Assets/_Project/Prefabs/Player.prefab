@@ -299,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f14195d918adf4aa671ba439ade4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.VFX.LightsaberVFX
-  saberBase: {fileID: 0}
-  saberTip: {fileID: 0}
+  saberBase: {fileID: 865106193061599971}
+  saberTip: {fileID: 9064940152394248204}
   saberLength: 1.5
   segments: 20
   defaultGradient:
@@ -357,6 +357,8 @@ GameObject:
   - component: {fileID: 7860504838923910171}
   - component: {fileID: 7870729935258347720}
   - component: {fileID: 516944314391365191}
+  - component: {fileID: 1785169173931398030}
+  - component: {fileID: 1850879519392355958}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -494,10 +496,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Player.PlayerCombat
   hurtboxLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 10
   clashLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 12
   saberTip: {fileID: 9064940152394248204}
   saberBase: {fileID: 865106193061599971}
 --- !u!114 &7870729935258347720
@@ -533,13 +535,13 @@ MonoBehaviour:
   saberBase: {fileID: 865106193061599971}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   wallLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 9
   hurtboxLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 10
   groundCheckRadius: 0.3
   groundCheckDistance: 0.1
   wallCheckDistance: 0.5
@@ -552,6 +554,34 @@ MonoBehaviour:
   dashCooldown: 0.5
   airDashCooldown: 1
   invulnerabilityFlashInterval: 0.1
+  diStrength: 0.33
+  staleMoveHistorySize: 9
+  staleMoveMinMultiplier: 0.72
+--- !u!114 &1785169173931398030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073491718320609073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8520310bba43944ab521366a82f53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Player.FormMechanicHandler
+  debugMode: 0
+--- !u!114 &1850879519392355958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073491718320609073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7a4a144ad08d04aa27a89d8738a413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Combat.CombatAnimationEvents
 --- !u!1 &4061317235027620401
 GameObject:
   m_ObjectHideFlags: 0

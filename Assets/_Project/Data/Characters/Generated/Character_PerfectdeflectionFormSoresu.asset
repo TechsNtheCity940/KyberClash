@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Character_SoreSoothe
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
   description: 
-  characterId: sore_soothe
-  displayName: Sore-Soothe
-  characterDescription: Hits like a sponge. Deflects like a boss.
+  characterId: perfectdeflection_form_soresu
+  displayName: Perfectdeflection Form Soresu
+  characterDescription: Generated Ludo AI fighter art and animation set for Perfectdeflection
+    Form Soresu.
   characterPortrait: {fileID: 21300000, guid: 9a6aa3a5526c9d043812b9d6e34826cb, type: 3}
   characterIcon: {fileID: 21300000, guid: 9a6aa3a5526c9d043812b9d6e34826cb, type: 3}
   animatorController: {fileID: 9100000, guid: 23fd38abaa0d26346912b8d8f64bd378, type: 2}
@@ -56,6 +57,7 @@ MonoBehaviour:
   characterModelPrefab: {fileID: 8586914383057406125, guid: 57822f2b30278ef4ba2efa8c7e294a5b, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

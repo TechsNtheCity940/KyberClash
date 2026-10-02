@@ -100,6 +100,9 @@ namespace KyberKlash.Data
         [Tooltip("Trail effect during active frames")]
         public GameObject trailEffectPrefab;
 
+        [Tooltip("SFX to play on swing")]
+        public AudioClip swingSFX;
+
         [Header("Parry Interaction")]
         [Tooltip("Can this attack be parried?")]
         public bool canBeParried = true;

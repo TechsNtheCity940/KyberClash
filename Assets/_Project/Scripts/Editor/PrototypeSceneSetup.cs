@@ -252,6 +252,12 @@ namespace KyberKlash.Core
             // Meter
             var meter = playerObj.AddComponent<PlayerMeter>();
             
+            // FormMechanicHandler
+            var mechanicHandler = playerObj.AddComponent<FormMechanicHandler>();
+            
+            // CombatAnimationEvents - receives events from Animator
+            var animEvents = playerObj.AddComponent<CombatAnimationEvents>();
+            
             // Controller
             var controller = playerObj.AddComponent<PlayerController>();
             var defaultCharacter = AssetDatabase.LoadAssetAtPath<CharacterData>(DataPath + "/Characters/Character_JollyKnight.asset");

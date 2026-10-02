@@ -37,10 +37,11 @@ MonoBehaviour:
   blockStunFrames: 10
   blockPushback: 2
   animationTrigger: NeutralSpecial
-  hitVFXPrefab: {fileID: 0}
+  hitVFXPrefab: {fileID: 274365118937011696, guid: 1c818eb63d7c7114d84d8890c59694ac, type: 3}
   hitSFX: {fileID: 0}
-  clashVFXPrefab: {fileID: 0}
-  trailEffectPrefab: {fileID: 0}
+  clashVFXPrefab: {fileID: 2939578504611168666, guid: e8e7dd5669f36de4c93b0a7d01595489, type: 3}
+  trailEffectPrefab: {fileID: 9022265824397306003, guid: b8d258f09f29d3f4a8cb57bead01dd82, type: 3}
+  swingSFX: {fileID: 0}
   canBeParried: 1
   perfectParryWindowFrames: 8
   perfectParryMeterReward: 15

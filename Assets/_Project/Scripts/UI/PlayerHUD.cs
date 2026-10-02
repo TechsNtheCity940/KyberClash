@@ -30,6 +30,8 @@ namespace KyberKlash.UI
         private int stocks = 3;
         private RectTransform offScreenArrow;
 
+        private int StocksFromController => player != null ? Mathf.RoundToInt(player.StocksRemaining) : stocks;
+
         public void Initialize(PlayerController playerController)
         {
             player = playerController;
@@ -45,6 +47,9 @@ namespace KyberKlash.UI
             // Initial values
             displayedDamagePercent = meter.DamagePercent;
             displayedMeterPercent = meter.MeterPercent;
+
+            // Seed stock icons from the match source of truth (GameManager stock count).
+            stocks = StocksFromController;
             UpdateDamageDisplay();
             UpdateMeterDisplay();
 
@@ -257,17 +262,20 @@ namespace KyberKlash.UI
 
         private void OnPlayerDeath()
         {
-            stocks = Mathf.Max(0, stocks - 1);
+            // Mirror the controller's authoritative stock count.
+            stocks = StocksFromController;
             UpdateStockIcons();
         }
 
         private void OnPlayerRespawn()
         {
-            // Reset display
+            // Reset display; reflect current stock count from the controller.
             displayedDamagePercent = 0f;
             displayedMeterPercent = 0f;
+            stocks = StocksFromController;
             UpdateDamageDisplay();
             UpdateMeterDisplay();
+            UpdateStockIcons();
         }
 
         private void UpdateDamageDisplay()

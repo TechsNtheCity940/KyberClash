@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using KyberKlash.Data;
+using KyberKlash.Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -64,11 +65,33 @@ namespace KyberKlash.Core
             if (gameManager != null)
             {
                 gameManager.SetAutoStart(false);
+                SubscribeMatchEvents();
             }
 
             if (!matchStarted)
             {
                 ShowStartScreen();
+            }
+        }
+
+        private void Update()
+        {
+            // Avoid double-handling when a modal (pause/results) already owns the screen.
+            if (gameManager == null || !gameManager.IsMatchActive) return;
+            if (!matchStarted) return; // results/title screen is showing
+
+            bool escapeDown = UnityEngine.Input.GetKeyDown(KeyCode.Escape);
+            if (escapeDown)
+            {
+                if (gameManager.IsPaused)
+                {
+                    HidePauseOverlay();
+                }
+                else
+                {
+                    gameManager.SetPaused(true);
+                    ShowPauseOverlay();
+                }
             }
         }
 
@@ -140,6 +163,121 @@ namespace KyberKlash.Core
             {
                 Application.Quit();
             });
+        }
+
+        /// <summary>Public entry used by GameManager.ReturnToMenu() to re-show the title.</summary>
+        public void ShowStartScreenPublic()
+        {
+            matchStarted = false;
+            if (GameManager.Instance != null) GameManager.Instance.SetPaused(false);
+            ShowStartScreen();
+        }
+
+        private void ShowPauseOverlay()
+        {
+            // Dim the gameplay without destroying the HUD.
+            CreateBackground("pause_overlay", new Color(0.01f, 0.012f, 0.03f, 0.62f));
+            CreateTitle("PAUSED", new Vector2(0f, 150f), 64);
+            CreateButton("RESUME", new Vector2(0f, 40f), () => HidePauseOverlay());
+            CreateButton("RESTART MATCH", new Vector2(0f, -40f), () =>
+            {
+                if (GameManager.Instance != null) GameManager.Instance.RestartMatch();
+            });
+            CreateButton("QUIT TO TITLE", new Vector2(0f, -120f), () =>
+            {
+                if (GameManager.Instance != null) GameManager.Instance.ReturnToMenu();
+                else ShowStartScreenPublic();
+            });
+        }
+
+        private void HidePauseOverlay()
+        {
+            if (GameManager.Instance != null) GameManager.Instance.SetPaused(false);
+            Clear();
+            matchStarted = true;
+        }
+
+        /// <summary>
+        /// Victory / Defeat / Results screen. Called by GameManager.OnMatchResolved.
+        /// </summary>
+        private void ShowMatchResults(PlayerController winner)
+        {
+            matchStarted = false;
+            Clear();
+
+            bool isDraw = winner == null;
+            string headline = isDraw ? "DRAW" : "VICTORY";
+            Color headlineColor = isDraw
+                ? new Color(0.95f, 0.95f, 0.95f, 1f)
+                : new Color(0.72f, 0.92f, 1f, 1f);
+
+            CreateBackground("results_background", new Color(0.01f, 0.012f, 0.03f, 0.97f));
+            CreateTitle(headline, new Vector2(0f, 200f), 78);
+            // Recolor the headline via a fresh label overlay positioned on top.
+            CreateLabel(headline, new Vector2(0f, 200f), 78, headlineColor);
+
+            if (!isDraw && winner != null && winner.CharacterData != null)
+            {
+                CreateLabel(winner.CharacterData.displayName + " WINS", new Vector2(0f, 140f), 32, new Color(1f, 0.92f, 0.98f, 1f));
+                if (winner.CharacterData.characterPortrait != null)
+                {
+                    Image portrait = CreateChildImage(root, "WinnerPortrait", winner.CharacterData.characterPortrait);
+                    RectTransform pr = portrait.rectTransform;
+                    pr.anchorMin = new Vector2(0.5f, 0.5f);
+                    pr.anchorMax = new Vector2(0.5f, 0.5f);
+                    pr.sizeDelta = new Vector2(220f, 220f);
+                    pr.anchoredPosition = new Vector2(0f, 40f);
+                    portrait.preserveAspect = true;
+                    portrait.raycastTarget = false;
+                }
+            }
+            else
+            {
+                CreateLabel("NO CONTEST", new Vector2(0f, 140f), 30, Color.white);
+            }
+
+            // Per-fighter summary (stocks remaining / final damage %).
+            var players = GameManager.Instance != null ? GameManager.Instance.GetPlayers() : new PlayerController[0];
+            for (int i = 0; i < players.Length; i++)
+            {
+                var p = players[i];
+                if (p == null || p.CharacterData == null) continue;
+                string line = $"{p.CharacterData.displayName}  -  {p.DamagePercent:0}% dmg  -  {Mathf.Max(0, p.StocksRemaining)} stock(s)";
+                CreateLabel(line, new Vector2(0f, 10f - i * 34f), 22, p == winner ? new Color(0.8f, 1f, 0.9f, 1f) : new Color(0.8f, 0.85f, 0.92f, 1f));
+            }
+
+            // Reason line
+            string reason = GameManager.Instance != null ? ReasonText(GameManager.Instance.LastEndReason) : string.Empty;
+            if (!string.IsNullOrEmpty(reason))
+            {
+                CreateLabel(reason, new Vector2(0f, -110f), 22, new Color(0.75f, 0.9f, 1f, 1f));
+            }
+
+            CreateButton("REMATCH", new Vector2(0f, -180f), () =>
+            {
+                if (GameManager.Instance != null) GameManager.Instance.RestartMatch();
+            }, 320f);
+            CreateButton("TITLE", new Vector2(0f, -250f), ShowStartScreenPublic, 320f);
+        }
+
+        private static string ReasonText(GameManager.MatchEndReason reason)
+        {
+            switch (reason)
+            {
+                case GameManager.MatchEndReason.LastFighterStanding: return "Last fighter standing";
+                case GameManager.MatchEndReason.TimeLimit: return "Time limit - lowest damage wins";
+                case GameManager.MatchEndReason.Draw: return "Draw";
+                default: return string.Empty;
+            }
+        }
+
+        /// <summary>Subscribe the results screen to match resolution. Call once.</summary>
+        private void SubscribeMatchEvents()
+        {
+            var gm = GameManager.Instance;
+            if (gm == null) return;
+            gm.OnMatchResolved -= ShowMatchResults;
+            gm.OnMatchResolved += ShowMatchResults;
         }
 
         private void ShowCharacterSelect()

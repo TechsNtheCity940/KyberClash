@@ -85,7 +85,7 @@ namespace KyberKlash.Player.States
             // Idle variation animations
             if (idleTimer > 5f && Random.value < 0.01f)
             {
-                animator.SetTrigger("IdleVariation");
+                player.SetAnimatorTriggerIfExists("IdleVariation");
                 idleTimer = 0f;
             }
         }
@@ -102,7 +102,7 @@ namespace KyberKlash.Player.States
         {
             moveAnimationHash = Animator.StringToHash("Move");
             animator.CrossFade(moveAnimationHash, 0.1f);
-            animator.SetFloat("MoveSpeed", 1f);
+            player.SetAnimatorFloatIfExists("MoveSpeed", 1f);
         }
 
         protected override void OnUpdatePlayerLogic(float deltaTime)
@@ -123,7 +123,7 @@ namespace KyberKlash.Player.States
 
             // Update animation speed based on velocity
             float speedPercent = Mathf.Abs(rb.linearVelocity.x) / (characterData.moveSpeed * currentForm.moveSpeedMultiplier);
-            animator.SetFloat("MoveSpeed", speedPercent);
+            player.SetAnimatorFloatIfExists("MoveSpeed", speedPercent);
 
             // Check for jump
             if (input.JumpPressed || CanExecuteBufferedJump())
@@ -176,7 +176,7 @@ namespace KyberKlash.Player.States
 
         protected override void OnExitPlayerState()
         {
-            animator.SetFloat("MoveSpeed", 0f);
+            player.SetAnimatorFloatIfExists("MoveSpeed", 0f);
         }
     }
 

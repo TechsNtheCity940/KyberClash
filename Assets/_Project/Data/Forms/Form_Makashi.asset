@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: Form_Makashi
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.FormSO
   description: 
-  formId: makashi
+  formId: Form_Makashi
   displayName: 'Form II: Makashi'
-  loreDescription: The dueling form. Precision and economy of motion.
-  saberColor: {r: 0, g: 1, b: 0, a: 1}
+  loreDescription: Dueling form. Precise parries, ripostes.
+  saberColor: {r: 0, g: 1, b: 1, a: 1}
   saberCoreColor: {r: 1, g: 1, b: 1, a: 1}
   saberGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key1: {r: 0, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 1, b: 1, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 0
+    ctime1: 32768
+    ctime2: 65535
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -46,40 +46,40 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   saberMaterial: {fileID: 0}
   formVFXPrefab: {fileID: 0}
   moveSpeedMultiplier: 1.1
-  airSpeedMultiplier: 1
+  airSpeedMultiplier: 1.1
   jumpHeightMultiplier: 1
   gravityMultiplier: 1
-  dashMultiplier: 1
+  dashMultiplier: 1.1
   maxAirJumps: 1
   canAirDash: 1
-  airDashCooldown: 1
+  airDashCooldown: 0.8
   canWallJump: 0
-  damageMultiplier: 1
+  damageMultiplier: 1.2
   knockbackMultiplier: 1
-  attackSpeedMultiplier: 1.15
+  attackSpeedMultiplier: 1.1
   meterGainMultiplier: 1
   meterCostMultiplier: 1
-  lightAttack: {fileID: 0}
-  heavyAttack: {fileID: 0}
-  upAerial: {fileID: 0}
-  downAerial: {fileID: 0}
-  forwardAerial: {fileID: 0}
-  backAerial: {fileID: 0}
-  neutralSpecial: {fileID: 0}
-  sideSpecial: {fileID: 0}
-  upSpecial: {fileID: 0}
-  downSpecial: {fileID: 0}
+  lightAttack: {fileID: 11400000, guid: 90842d7d7bd36a64eb035440781bfa2b, type: 2}
+  heavyAttack: {fileID: 11400000, guid: 607cc23b87c5a9945a2cdb4416cddce7, type: 2}
+  upAerial: {fileID: 11400000, guid: 5de8ca46c7668164e8266802056e2baa, type: 2}
+  downAerial: {fileID: 11400000, guid: 55d7b0ae7fad29540a506a2368c53353, type: 2}
+  forwardAerial: {fileID: 11400000, guid: b929a6d2f6a7a31418f06e474b6390b8, type: 2}
+  backAerial: {fileID: 11400000, guid: b5c3669cddc9d6448a26e989acb5e2e4, type: 2}
+  neutralSpecial: {fileID: 11400000, guid: 09e22fe540a6f964fac3008de0005cd4, type: 2}
+  sideSpecial: {fileID: 11400000, guid: 8953a15a048931e48a181ab4b7253ff5, type: 2}
+  upSpecial: {fileID: 11400000, guid: 27f503284b4f6164bbda8165f452ff4e, type: 2}
+  downSpecial: {fileID: 11400000, guid: 715c48c7e2ad8f34e85a97df126f30e8, type: 2}
   mechanicType: 2
   mechanicData:
     counterWindowFrames: 8
     counterMeterGain: 10
     counterAttack: {fileID: 0}
-    precisionWindowFrames: 3
+    precisionWindowFrames: 4
     riposteDamageMultiplier: 1.5
     riposteKnockbackMultiplier: 1.3
     canDeflectProjectiles: 1
@@ -101,4 +101,4 @@ MonoBehaviour:
     tranceArmorThreshold: 20
   passiveMeterGain: 0
   meterGainOnHit: 5
-  meterGainOnPerfectParry: 20
+  meterGainOnPerfectParry: 25

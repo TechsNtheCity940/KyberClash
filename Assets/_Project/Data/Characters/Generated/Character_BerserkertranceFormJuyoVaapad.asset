@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Character_JewelOnARampage
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
   description: 
-  characterId: jewel_on_a_rampage
-  displayName: Jewel-On-A-Rampage
-  characterDescription: Lost in the trance. Found in your face.
+  characterId: berserkertrance_form_juyo_vaapad
+  displayName: Berserkertrance Form Juyo Vaapad
+  characterDescription: Generated Ludo AI fighter art and animation set for Berserkertrance
+    Form Juyo Vaapad.
   characterPortrait: {fileID: 21300000, guid: dd2ba90c517f45a459f5e6d4e8d8f022, type: 3}
   characterIcon: {fileID: 21300000, guid: dd2ba90c517f45a459f5e6d4e8d8f022, type: 3}
   animatorController: {fileID: 9100000, guid: 0450a22cf313320418a3e6d266c9438b, type: 2}
@@ -56,6 +57,7 @@ MonoBehaviour:
   characterModelPrefab: {fileID: 3365423792552356874, guid: a9c9742febef39a439456f0284e1edab, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

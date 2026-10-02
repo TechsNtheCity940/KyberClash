@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 349
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,11 +106,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_00
+      name: perfectdeflection_form_soresu_animation_spritesheet_00
       rect:
         serializedVersion: 2
         x: 0
@@ -123,16 +136,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d5218be4d52bb954b9da7d679de3430c
-      internalID: -782938854
+      spriteID: a3932cbbffffffff0800000000000000
+      internalID: -1144899270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_01
+      name: perfectdeflection_form_soresu_animation_spritesheet_01
       rect:
         serializedVersion: 2
         x: 357
@@ -145,16 +158,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2c535b327e512cc47871c4b792d5a452
-      internalID: 1961809583
+      spriteID: ac4037acffffffff0800000000000000
+      internalID: -898431798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_02
+      name: perfectdeflection_form_soresu_animation_spritesheet_02
       rect:
         serializedVersion: 2
         x: 714
@@ -167,16 +180,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 55cb3e4373cefdf4daf67722451be0be
-      internalID: -870413837
+      spriteID: ef558866000000000800000000000000
+      internalID: 1720210942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_03
+      name: perfectdeflection_form_soresu_animation_spritesheet_03
       rect:
         serializedVersion: 2
         x: 0
@@ -189,16 +202,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 34479dd2c8e3893418bc75336dd04653
-      internalID: -1734382016
+      spriteID: 306f9c12000000000800000000000000
+      internalID: 566883843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_04
+      name: perfectdeflection_form_soresu_animation_spritesheet_04
       rect:
         serializedVersion: 2
         x: 357
@@ -211,16 +224,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4547c534c86de0f4bbf14816de512f75
-      internalID: -697869030
+      spriteID: dc60b9a8ffffffff0800000000000000
+      internalID: -1969551667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_05
+      name: perfectdeflection_form_soresu_animation_spritesheet_05
       rect:
         serializedVersion: 2
         x: 714
@@ -233,16 +246,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9cf2f61da5a34824293d53201a0ed090
-      internalID: -783714212
+      spriteID: bccaca24000000000800000000000000
+      internalID: 1118612683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_06
+      name: perfectdeflection_form_soresu_animation_spritesheet_06
       rect:
         serializedVersion: 2
         x: 0
@@ -255,16 +268,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 693ee321d174ddb4b8873ae0dd11a15b
-      internalID: -461068191
+      spriteID: c2ec11dbffffffff0800000000000000
+      internalID: -1122906580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_07
+      name: perfectdeflection_form_soresu_animation_spritesheet_07
       rect:
         serializedVersion: 2
         x: 357
@@ -277,16 +290,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: aa7645a04b306d2469df8b5715eb599c
-      internalID: -476478791
+      spriteID: 23d5c05cffffffff0800000000000000
+      internalID: -989045454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: perfectdeflection_form_soresu_frame_08
+      name: perfectdeflection_form_soresu_animation_spritesheet_08
       rect:
         serializedVersion: 2
         x: 714
@@ -299,10 +312,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 00be13efdc87fe44aa543775bffe5699
-      internalID: 1803312924
+      spriteID: 0ac8fb38ffffffff0800000000000000
+      internalID: -2084598624
       vertices: []
       indices: 
       edges: []

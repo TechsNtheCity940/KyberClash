@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Character_MakAShifty
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
   description: 
-  characterId: mak_a_shifty
-  displayName: Mak-A-Shifty
-  characterDescription: Fancy footwork and even fancier parries.
+  characterId: precisionparry_form_makashi
+  displayName: Precisionparry Form Makashi
+  characterDescription: Generated Ludo AI fighter art and animation set for Precisionparry
+    Form Makashi.
   characterPortrait: {fileID: 21300000, guid: d9a8738c3660d744aba55b49a6f3e517, type: 3}
   characterIcon: {fileID: 21300000, guid: d9a8738c3660d744aba55b49a6f3e517, type: 3}
   animatorController: {fileID: 9100000, guid: d1158a714fcc3454dba8e0137d847850, type: 2}
@@ -56,6 +57,7 @@ MonoBehaviour:
   characterModelPrefab: {fileID: 6492114437399951605, guid: a57b9f03d33517041af649ecfbf9b08e, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

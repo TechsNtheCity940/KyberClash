@@ -75,7 +75,7 @@ namespace McpUnity.Tools
                 ["success"] = true,
                 ["type"] = "text",
                 ["message"] = $"GameObject '{gameObject.name}' moved successfully.",
-                ["instanceId"] = gameObject.GetEntityId().Value,
+                ["instanceId"] = gameObject.GetEntityId().GetRawData(),
                 ["name"] = gameObject.name,
                 ["path"] = TransformToolUtils.GetGameObjectPath(gameObject),
                 ["position"] = new JObject
@@ -167,7 +167,7 @@ namespace McpUnity.Tools
                 ["success"] = true,
                 ["type"] = "text",
                 ["message"] = $"GameObject '{gameObject.name}' rotated successfully.",
-                ["instanceId"] = gameObject.GetEntityId().Value,
+                ["instanceId"] = gameObject.GetEntityId().GetRawData(),
                 ["name"] = gameObject.name,
                 ["path"] = TransformToolUtils.GetGameObjectPath(gameObject),
                 ["rotation"] = new JObject
@@ -254,7 +254,7 @@ namespace McpUnity.Tools
                 ["success"] = true,
                 ["type"] = "text",
                 ["message"] = $"GameObject '{gameObject.name}' scaled successfully.",
-                ["instanceId"] = gameObject.GetEntityId().Value,
+                ["instanceId"] = gameObject.GetEntityId().GetRawData(),
                 ["name"] = gameObject.name,
                 ["path"] = TransformToolUtils.GetGameObjectPath(gameObject),
                 ["scale"] = new JObject
@@ -359,7 +359,7 @@ namespace McpUnity.Tools
                 ["success"] = true,
                 ["type"] = "text",
                 ["message"] = $"GameObject '{gameObject.name}' transform updated successfully.",
-                ["instanceId"] = gameObject.GetEntityId().Value,
+                ["instanceId"] = gameObject.GetEntityId().GetRawData(),
                 ["name"] = gameObject.name,
                 ["path"] = TransformToolUtils.GetGameObjectPath(gameObject),
                 ["transform"] = new JObject
@@ -432,7 +432,7 @@ namespace McpUnity.Tools
 
             if (instanceId.HasValue)
             {
-                gameObject = EditorUtility.EntityIdToObject(instanceId.Value) as GameObject;
+                gameObject = EditorUtility.EntityIdToObject((EntityId)instanceId.Value) as GameObject;
                 identifierInfo = $"instance ID {instanceId.Value}";
             }
             else if (!string.IsNullOrEmpty(objectPath))

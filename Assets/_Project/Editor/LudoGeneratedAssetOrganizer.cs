@@ -24,8 +24,10 @@ namespace KyberKlash.EditorTools
         private const string FormDataRoot = "Assets/_Project/Data/Forms";
         private const string AutoRunFlagPath = "Assets/_Project/Generated/LudoAI/Characters/.organize_generated_assets_once";
         private const string VisualChildName = "GeneratedVisual";
-        private const int SpriteSheetColumns = 6;
-        private const int SpriteSheetRows = 4;
+        // Ludo character sheets in this project contain nine complete poses in a 3x3 grid.
+        // The previous 6x4 layout sliced each pose into body fragments.
+        private const int SpriteSheetColumns = 3;
+        private const int SpriteSheetRows = 3;
 
         private static readonly string[] RuntimeStateNames =
         {
@@ -109,7 +111,11 @@ namespace KyberKlash.EditorTools
                     return;
                 }
 
-                File.Delete(AutoRunFlagPath);
+                // Delete through the AssetDatabase so Unity also removes the flag's .meta file.
+                if (!AssetDatabase.DeleteAsset(AutoRunFlagPath))
+                {
+                    File.Delete(AutoRunFlagPath);
+                }
                 OrganizeGeneratedCharacterAssets();
             };
         }
@@ -449,31 +455,31 @@ namespace KyberKlash.EditorTools
 
             int[] preferredIndices = stateName switch
             {
-                "Idle" => new[] { 0, 1 },
-                "Move" => new[] { 2, 3, 4, 5 },
+                "Idle" => new[] { 0, 4 },
+                "Move" => new[] { 0, 4, 0, 4 },
                 "Jump" => new[] { 6, 7 },
                 "DoubleJump" => new[] { 6, 8 },
                 "Fall" => new[] { 7, 8 },
-                "Dash" => new[] { 2, 3, 4, 5 },
-                "AirDash" => new[] { 15, 16 },
-                "LightAttack" => new[] { 9, 10 },
-                "Attack" => new[] { 9, 10 },
-                "HeavyAttack" => new[] { 11, 12 },
-                "UpAir" => new[] { 17, 18 },
-                "DownAir" => new[] { 19, 20 },
-                "ForwardAir" => new[] { 9, 10 },
-                "BackAir" => new[] { 11, 12 },
-                "Special" => new[] { 15, 16 },
-                "NeutralSpecial" => new[] { 15, 16 },
-                "SideSpecial" => new[] { 15, 16 },
-                "UpSpecial" => new[] { 17, 18 },
-                "DownSpecial" => new[] { 19, 20 },
-                "Block" => new[] { 13, 14 },
-                "Parry" => new[] { 13, 14 },
-                "HitStun" => new[] { 21, 22 },
-                "Knockback" => new[] { 21, 22 },
-                "Launch" => new[] { 21, 22, 23 },
-                "Death" => new[] { 23 },
+                "Dash" => new[] { 3, 2 },
+                "AirDash" => new[] { 6, 2 },
+                "LightAttack" => new[] { 0, 1, 2 },
+                "Attack" => new[] { 0, 1, 2 },
+                "HeavyAttack" => new[] { 4, 5, 6 },
+                "UpAir" => new[] { 6, 7, 8 },
+                "DownAir" => new[] { 8, 5, 4 },
+                "ForwardAir" => new[] { 1, 2, 3 },
+                "BackAir" => new[] { 5, 4, 3 },
+                "Special" => new[] { 4, 7, 8 },
+                "NeutralSpecial" => new[] { 4, 7, 8 },
+                "SideSpecial" => new[] { 1, 2, 3 },
+                "UpSpecial" => new[] { 6, 7, 8 },
+                "DownSpecial" => new[] { 8, 5, 4 },
+                "Block" => new[] { 8, 7 },
+                "Parry" => new[] { 7, 5 },
+                "HitStun" => new[] { 3, 4 },
+                "Knockback" => new[] { 3, 6 },
+                "Launch" => new[] { 3, 6, 7 },
+                "Death" => new[] { 6 },
                 "Respawn" => new[] { 0 },
                 "SaberOpen" => new[] { 0, 1 },
                 "SaberClose" => new[] { 1, 0 },

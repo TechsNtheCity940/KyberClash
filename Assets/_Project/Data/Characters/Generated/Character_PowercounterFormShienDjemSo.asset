@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Character_ShienDemandSo
   m_EditorClassIdentifier: Assembly-CSharp::KyberKlash.Data.CharacterData
   description: 
-  characterId: shien_demand_so
-  displayName: Shien-Demand So
-  characterDescription: Counter, then SMASH. It's not personal. It's So.
+  characterId: powercounter_form_shien_djem_so
+  displayName: Powercounter Form Shien Djem So
+  characterDescription: Generated Ludo AI fighter art and animation set for Powercounter
+    Form Shien Djem So.
   characterPortrait: {fileID: 21300000, guid: 024bc91c0344f6448b34934816e1bebd, type: 3}
   characterIcon: {fileID: 21300000, guid: 024bc91c0344f6448b34934816e1bebd, type: 3}
   animatorController: {fileID: 9100000, guid: 81b60b41e6e19ba48a1a3d0afe1c6f4b, type: 2}
@@ -56,6 +57,7 @@ MonoBehaviour:
   characterModelPrefab: {fileID: 367968225193293953, guid: 9ddbbff9ba13c97408a7e3165162c1a7, type: 3}
   modelMaterials: []
   saberEmitterTransform: {fileID: 0}
+  uiColor: {r: 0, g: 1, b: 1, a: 1}
   jumpSounds: []
   landSounds: []
   hitSounds: []

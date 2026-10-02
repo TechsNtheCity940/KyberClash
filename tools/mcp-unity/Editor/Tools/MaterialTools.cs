@@ -179,7 +179,7 @@ namespace McpUnity.Tools
 
             if (instanceId.HasValue)
             {
-                gameObject = EditorUtility.EntityIdToObject(instanceId.Value) as GameObject;
+                gameObject = EditorUtility.EntityIdToObject((EntityId)instanceId.Value) as GameObject;
             }
             else if (!string.IsNullOrEmpty(objectPath))
             {

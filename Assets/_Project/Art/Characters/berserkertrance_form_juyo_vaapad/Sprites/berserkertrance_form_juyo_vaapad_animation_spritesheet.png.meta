@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -114,18 +127,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 776
-        width: 179
-        height: 259
+        y: 690
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9c89970bce2176047986240d0f8d8281
+      spriteID: acb799b2000000000800000000000000
       internalID: 731478986
       vertices: []
       indices: 
@@ -135,19 +148,19 @@ TextureImporter:
       name: berserkertrance_form_juyo_vaapad_animation_spritesheet_01
       rect:
         serializedVersion: 2
-        x: 179
-        y: 776
-        width: 180
-        height: 259
+        x: 359
+        y: 690
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3e7c83ffbfb11d44597e34fa8a2dfb26
+      spriteID: bc462128ffffffff0800000000000000
       internalID: -2112723765
       vertices: []
       indices: 
@@ -157,19 +170,19 @@ TextureImporter:
       name: berserkertrance_form_juyo_vaapad_animation_spritesheet_02
       rect:
         serializedVersion: 2
-        x: 359
-        y: 776
-        width: 179
-        height: 259
+        x: 718
+        y: 690
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5189308a641a6f14799ce288076ca288
+      spriteID: 8f944960000000000800000000000000
       internalID: 110381560
       vertices: []
       indices: 
@@ -179,19 +192,19 @@ TextureImporter:
       name: berserkertrance_form_juyo_vaapad_animation_spritesheet_03
       rect:
         serializedVersion: 2
-        x: 538
-        y: 776
-        width: 180
-        height: 259
+        x: 0
+        y: 345
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bbf6f72db358d064a84732ebf5abd53e
+      spriteID: 2f326bc6000000000800000000000000
       internalID: 1823876082
       vertices: []
       indices: 
@@ -201,19 +214,19 @@ TextureImporter:
       name: berserkertrance_form_juyo_vaapad_animation_spritesheet_04
       rect:
         serializedVersion: 2
-        x: 718
-        y: 776
-        width: 179
-        height: 259
+        x: 359
+        y: 345
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 805bc53981951ce459a0ac01e61d2f49
+      spriteID: b2e847ceffffffff0800000000000000
       internalID: -327905749
       vertices: []
       indices: 
@@ -223,19 +236,19 @@ TextureImporter:
       name: berserkertrance_form_juyo_vaapad_animation_spritesheet_05
       rect:
         serializedVersion: 2
-        x: 897
-        y: 776
-        width: 180
-        height: 259
+        x: 718
+        y: 345
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3a758dfd4d814834fb16396022e5cc9d
+      spriteID: 15abc2deffffffff0800000000000000
       internalID: -315835823
       vertices: []
       indices: 
@@ -246,18 +259,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 517
-        width: 179
-        height: 259
+        y: 0
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3d3dcea3d65199f4baee29303299e1be
+      spriteID: c84b5d5bffffffff0800000000000000
       internalID: -1244285812
       vertices: []
       indices: 
@@ -267,19 +280,19 @@ TextureImporter:
       name: berserkertrance_form_juyo_vaapad_animation_spritesheet_07
       rect:
         serializedVersion: 2
-        x: 179
-        y: 517
-        width: 180
-        height: 259
+        x: 359
+        y: 0
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4f11d778deeeb154a94c6280b360648b
+      spriteID: d27b4a1fffffffff0800000000000000
       internalID: -240863443
       vertices: []
       indices: 
@@ -289,350 +302,20 @@ TextureImporter:
       name: berserkertrance_form_juyo_vaapad_animation_spritesheet_08
       rect:
         serializedVersion: 2
-        x: 359
-        y: 517
-        width: 179
-        height: 259
+        x: 718
+        y: 0
+        width: 359
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 02f0dfe70368e8d41a441c53c02c73bf
+      spriteID: 582120d5000000000800000000000000
       internalID: 1560416901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_09
-      rect:
-        serializedVersion: 2
-        x: 538
-        y: 517
-        width: 180
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ea6df7626b54a546bc96c304c20b008
-      internalID: -208505604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 718
-        y: 517
-        width: 179
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bba043000253c564099e296f05634231
-      internalID: 792060876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 897
-        y: 517
-        width: 180
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e6e54795452c7847b91a7e1e2f93987
-      internalID: -1582491152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 258
-        width: 179
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b71219e2e6520c43b8c9f669bd54e98
-      internalID: -1523263689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 258
-        width: 180
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70e4d56f46ef790419af5d26effd13a7
-      internalID: -477400482
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 258
-        width: 179
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f7affa180e0d674c92536834db9462f
-      internalID: 191275968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 538
-        y: 258
-        width: 180
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 413973a759abb8542a8eeb6a863e9ebd
-      internalID: 1310123811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_16
-      rect:
-        serializedVersion: 2
-        x: 718
-        y: 258
-        width: 179
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39f2ed07dfa738d4da0bb358bdb60a8e
-      internalID: -825987869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 897
-        y: 258
-        width: 180
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6831536a3c59784a97d5ffafcca95c9
-      internalID: -1905503370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 179
-        height: 258
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8426a994784d57a429c06e8c226b4883
-      internalID: -1660075279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 0
-        width: 180
-        height: 258
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49c2840b88739be4d94b31d7ab16d16f
-      internalID: -1092032608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 0
-        width: 179
-        height: 258
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4612d420acb299478de0a0dd4de94ca
-      internalID: -2064016014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_21
-      rect:
-        serializedVersion: 2
-        x: 538
-        y: 0
-        width: 180
-        height: 258
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0de9102568702f24ea2952b6961514e1
-      internalID: 1742935401
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_22
-      rect:
-        serializedVersion: 2
-        x: 718
-        y: 0
-        width: 179
-        height: 258
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4951c6ef32c5a8428dad893f8eb7938
-      internalID: 405979024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: berserkertrance_form_juyo_vaapad_animation_spritesheet_23
-      rect:
-        serializedVersion: 2
-        x: 897
-        y: 0
-        width: 180
-        height: 258
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: beab206bf1d68ac499892ac556c9925d
-      internalID: -494734890
       vertices: []
       indices: 
       edges: []

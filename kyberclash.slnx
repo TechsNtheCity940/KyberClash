@@ -1,0 +1,7 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="unity.webp.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="LudoAIPlugin.Editor.csproj" />
+  <Project Path="WebP.Editor.csproj" />
+</Solution>

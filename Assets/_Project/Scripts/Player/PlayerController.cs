@@ -5,6 +5,8 @@ using KyberKlash.Data;
 using KyberKlash.Player.States;
 using KyberKlash.Stage;
 using KyberKlash.VFX;
+using KyberKlash.Combat;
+using System.Linq;
 using Unity.Cinemachine;
 
 namespace KyberKlash.Player
@@ -20,6 +22,7 @@ namespace KyberKlash.Player
     [RequireComponent(typeof(PlayerInputHandler))]
     [RequireComponent(typeof(PlayerCombat))]
     [RequireComponent(typeof(PlayerMeter))]
+    [RequireComponent(typeof(CombatAnimationEvents))]
     public class PlayerController : MonoBehaviour
     {
         [Header("Character Data")]
@@ -86,6 +89,7 @@ namespace KyberKlash.Player
         private PlayerInputHandler inputHandler;
         private PlayerCombat combat;
         private PlayerMeter meter;
+        private FormMechanicHandler formMechanicHandler;
         private Rigidbody rb;
         private Animator animator;
         private CapsuleCollider collider;
@@ -125,6 +129,36 @@ namespace KyberKlash.Player
         public event System.Action<float, float> OnDamageTakenEvent; // damage, newPercent
         public event System.Action<float, float> OnMeterChangedEvent; // current, max
 
+        // --- Match / stock state (single source of truth) ---
+        private int stocksRemaining;
+        public int StocksRemaining => stocksRemaining;
+        public int PlayerIndex { get; private set; } = -1;
+        public bool IsEliminated => stocksRemaining <= 0;
+
+        public event System.Action<int> OnStockLost;   // remaining stocks after a loss
+        public event System.Action OnEliminated;        // out of stocks (match loss)
+
+        /// <summary>Initialize stock count + player slot for a match.</summary>
+        public void InitializeMatchState(int stocks, int index)
+        {
+            stocksRemaining = Mathf.Max(0, stocks);
+            PlayerIndex = index;
+            isDead = false;
+            isInvulnerable = false;
+        }
+
+        /// <summary>Lose one stock (called by the match manager on a confirmed KO).</summary>
+        public void RegisterStockLoss()
+        {
+            if (stocksRemaining <= 0) return;
+            stocksRemaining--;
+            OnStockLost?.Invoke(stocksRemaining);
+            if (stocksRemaining <= 0)
+            {
+                OnEliminated?.Invoke();
+            }
+        }
+
         protected virtual void Awake()
         {
             // Get components
@@ -135,6 +169,7 @@ namespace KyberKlash.Player
             animator = GetComponent<Animator>();
             collider = GetComponent<CapsuleCollider>();
             stateMachine = GetComponent<StateMachine>();
+            formMechanicHandler = GetComponent<FormMechanicHandler>();
 
             // Configure Rigidbody for platformer physics
             rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
@@ -558,6 +593,19 @@ namespace KyberKlash.Player
         public void TakeDamage(DamageInfo damageInfo)
         {
             if (isInvulnerable || isDead) return;
+
+            // Form defense 1 - Power Counter (Shien/Djem So): while in the parry window and
+            // the incoming hit meets the threshold, absorb it and counter-strike.
+            if (formMechanicHandler != null && formMechanicHandler.TryPowerCounter(damageInfo))
+            {
+                return;
+            }
+
+            // Form defense 2 - Berserker Trance armor: small hits are shrugged off entirely.
+            if (formMechanicHandler != null && formMechanicHandler.CheckTranceArmor(damageInfo.damage))
+            {
+                return;
+            }
 
             // Apply damage percentage
             float damage = damageInfo.damage * currentForm.damageMultiplier;
@@ -1024,5 +1072,39 @@ namespace KyberKlash.Player
         public int MaxAirJumps => characterData.maxJumps * (currentForm.maxAirJumps > 0 ? currentForm.maxAirJumps : 1);
         public float DamagePercent => meter.DamagePercent;
         public float MeterPercent => meter.MeterPercent;
+
+        #region Animation Event Helpers
+
+        /// <summary>
+        /// Handle animation events from CombatAnimationEvents
+        /// </summary>
+        public virtual void OnAnimationEvent(CombatAnimationEvent evt)
+        {
+            // Override in derived states for specific handling
+        }
+
+        /// <summary>
+        /// Set animator float parameter if it exists
+        /// </summary>
+        public void SetAnimatorFloatIfExists(string name, float value)
+        {
+            if (animator != null && animator.parameters.Any(p => p.name == name && p.type == AnimatorControllerParameterType.Float))
+            {
+                animator.SetFloat(name, value);
+            }
+        }
+
+        /// <summary>
+        /// Set animator trigger if it exists
+        /// </summary>
+        public void SetAnimatorTriggerIfExists(string name)
+        {
+            if (animator != null && animator.parameters.Any(p => p.name == name && p.type == AnimatorControllerParameterType.Trigger))
+            {
+                animator.SetTrigger(name);
+            }
+        }
+
+        #endregion
     }
 }

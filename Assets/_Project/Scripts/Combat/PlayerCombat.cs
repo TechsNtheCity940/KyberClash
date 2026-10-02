@@ -34,6 +34,9 @@ namespace KyberKlash.Player
         private float parryWindowTimer;
         private System.Action<GameObject, float, float> riposteCallback;
 
+        // Form mechanic bonuses
+        private FormMechanicHandler formMechanicHandler;
+
         // Clash detection
         private bool clashOccurred;
 
@@ -62,6 +65,7 @@ namespace KyberKlash.Player
         protected virtual void Awake()
         {
             player = GetComponent<PlayerController>();
+            formMechanicHandler = GetComponent<FormMechanicHandler>();
         }
 
         public void StartAttack(AttackSO attackData)
@@ -76,6 +80,52 @@ namespace KyberKlash.Player
 
             startupFrames = Mathf.RoundToInt(attackData.startupFrames / player.CurrentForm.attackSpeedMultiplier);
             activeFrames = Mathf.RoundToInt(attackData.activeFrames / player.CurrentForm.attackSpeedMultiplier);
+        }
+
+        /// <summary>
+        /// Called from animation events for combat phase changes
+        /// </summary>
+        public void OnAnimationEvent(CombatAnimationEvent evt)
+        {
+            switch (evt)
+            {
+                case CombatAnimationEvent.Startup:
+                    // Startup phase - hitbox not yet active
+                    hitboxActive = false;
+                    break;
+                case CombatAnimationEvent.Active:
+                    // Active frames - enable hitbox
+                    if (currentAttack != null)
+                    {
+                        ActivateHitbox(currentAttack);
+                    }
+                    break;
+                case CombatAnimationEvent.Recovery:
+                    // Recovery - disable hitbox
+                    DeactivateHitbox();
+                    break;
+                case CombatAnimationEvent.HitboxEnable:
+                    if (currentAttack != null)
+                    {
+                        ActivateHitbox(currentAttack);
+                    }
+                    break;
+                case CombatAnimationEvent.HitboxDisable:
+                    DeactivateHitbox();
+                    break;
+                case CombatAnimationEvent.HitboxReactivate:
+                    ReactivateHitbox();
+                    break;
+                case CombatAnimationEvent.SwingSFX:
+                    player?.PlaySound(currentAttack?.swingSFX.name);
+                    break;
+                case CombatAnimationEvent.HitSFX:
+                    player?.PlaySound(currentAttack?.hitSFX.name);
+                    break;
+                case CombatAnimationEvent.LandSFX:
+                    player?.PlaySound("Land");
+                    break;
+            }
         }
 
         public void ActivateHitbox(AttackSO attackData)
@@ -208,6 +258,12 @@ namespace KyberKlash.Player
             damageable.TakeDamage(damageInfo);
             hitTargets.Add(hitCollider.gameObject);
 
+            // Ataru: track aerial chains so subsequent aerial hits scale up.
+            if (formMechanicHandler != null && !player.IsGrounded)
+            {
+                formMechanicHandler.RegisterAerialAttack();
+            }
+
             OnHitDealt?.Invoke(damageInfo);
 
             var attackState = player?.GetComponent<AttackState>();
@@ -246,11 +302,27 @@ namespace KyberKlash.Player
 
         private DamageInfo CreateDamageInfo(GameObject victim, AttackSO attackData, Vector3 hitPoint)
         {
+            float damage = attackData.baseDamage * player.CurrentForm.damageMultiplier;
+
+            // Form offensive bonuses ----------------------------------------------------
+            if (formMechanicHandler != null)
+            {
+                // Berserker Trance: flat damage multiplier while in trance.
+                damage *= formMechanicHandler.GetTranceDamageBonus();
+
+                // Riposte window: powered counter swing (Makashi) deals bonus damage.
+                damage *= formMechanicHandler.ConsumeRiposteMultiplier();
+
+                // Ataru: consecutive aerial hits scale damage.
+                if (!player.IsGrounded)
+                    damage *= formMechanicHandler.GetAerialChainMultiplier();
+            }
+
             return new DamageInfo
             {
                 attacker = gameObject,
                 victim = victim,
-                damage = attackData.baseDamage * player.CurrentForm.damageMultiplier,
+                damage = damage,
                 knockback = Vector3.zero,
                 hitPoint = hitPoint,
                 hitNormal = Vector3.up,
